@@ -9,7 +9,7 @@ namespace TPS_PAV.Entities
     class Perfil
     {
         public int IdPerfil { get; set; }
-        public string Nombre { get; set; }
+        public string Nombre { get; set; } 
 
         public override string ToString()
         {
