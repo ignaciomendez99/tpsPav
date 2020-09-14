@@ -15,6 +15,8 @@ namespace TPS_PAV.GUI
     // HAY QUE IMPLEMENTAR EL SERVICE DE CATEGORIA Y CURSOS COMO ATRIBUTOS READONLY DEL FORM
     public partial class ABMCCursosForm : Form
     {
+        private bool creado = false;
+
         public ABMCCursosForm()
         {
             InitializeComponent();
@@ -46,7 +48,8 @@ namespace TPS_PAV.GUI
             CursoService cser = new CursoService();
             cser.AgregarCurso(curso);
             MessageBox.Show("Se creó el curso con éxito.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.None);
-            this.Close();
+            this.creado = true;
+            
 
         }
 
@@ -70,9 +73,13 @@ namespace TPS_PAV.GUI
         private void ABMCCursosForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult rpta;
-            rpta = MessageBox.Show("Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rpta == DialogResult.No)
-                e.Cancel = true;
+
+            if (!this.creado)
+            {
+                rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rpta == DialogResult.No)
+                    e.Cancel = true;
+            }
         }
     }
 }

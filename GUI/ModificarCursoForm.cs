@@ -17,6 +17,7 @@ namespace TPS_PAV.GUI
         private Curso cursoModificar;
         private CursoService curService;
         private CategoriaService catService;
+        private bool modificado = false;
 
         public ModificarCursoForm(Curso curAMod)
         {
@@ -68,18 +69,22 @@ namespace TPS_PAV.GUI
 
             curService.ModificarCurso(cursoModificar);
             MessageBox.Show("Curso modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.None);
-            
+            this.modificado = true;
             this.Close();
         }
 
         private void ModificarCursoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult rpta;
-            rpta = MessageBox.Show("Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rpta == DialogResult.No)
-                e.Cancel = true;
             
+            DialogResult rpta;
 
+            if (!this.modificado)
+            {
+                rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rpta == DialogResult.No)
+                    e.Cancel = true;
+            }
+           
         }
     }
 }

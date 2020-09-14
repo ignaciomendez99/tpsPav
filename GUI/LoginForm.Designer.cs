@@ -81,6 +81,7 @@ namespace TPS_PAV
             this.txClave.Location = new System.Drawing.Point(83, 86);
             this.txClave.Margin = new System.Windows.Forms.Padding(4);
             this.txClave.Name = "txClave";
+            this.txClave.PasswordChar = '*';
             this.txClave.Size = new System.Drawing.Size(165, 22);
             this.txClave.TabIndex = 4;
             // 

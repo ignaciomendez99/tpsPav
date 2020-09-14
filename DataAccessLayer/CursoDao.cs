@@ -11,14 +11,13 @@ namespace TPS_PAV.DataAccessLayer
 {
     public class CursoDao
     {
-        // VER IMPLEMENTAR POR FECHA
         public IList<Curso> GetCursoBySearch(string searchParam)
         {
 
             List<Curso> listCurso = new List<Curso>();
 
             var strSql = "SELECT * from Cursos WHERE (nombre LIKE @search " +
-                         "OR descripcion LIKE @search ) "+
+                         "OR descripcion LIKE @search OR id_curso LIKE @search) "+
                          "AND borrado = 0";
 
             Dictionary<string, object> dictSql = new Dictionary<string, object>();
