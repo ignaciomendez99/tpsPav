@@ -29,6 +29,8 @@ namespace TPS_PAV.BusinessLayer
                 return null;
             }
 
+            // validar username
+
             if (usr.Password != null && usr.Password.Equals(password))
             {
                 return usr;

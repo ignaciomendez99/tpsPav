@@ -12,7 +12,7 @@ namespace TPS_PAV.DataAccessLayer
     {
         public IList<Usuario> GetAll()
         {
-            List<Usuario> listadoBugs = new List<Usuario>();
+            List<Usuario> listadoUsuarios = new List<Usuario>();
 
             var strSql = "SELECT id_usuario, usuario, email, estado from Usuarios";
 
@@ -20,10 +20,10 @@ namespace TPS_PAV.DataAccessLayer
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {
-                listadoBugs.Add(MappingBug(row));
+                listadoUsuarios.Add(MappingBug(row));
             }
 
-            return listadoBugs;
+            return listadoUsuarios;
         }
 
         public Usuario GetUser(string pUsuario)
@@ -44,7 +44,7 @@ namespace TPS_PAV.DataAccessLayer
 
         private Usuario MappingBug(DataRow row)
         {
-            Usuario oUsuario = new Usuario
+            Usuario oUsuario = new Usuario 
             {
                 IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
                 NombreUsuario = row["usuario"].ToString(),

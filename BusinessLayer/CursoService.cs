@@ -30,5 +30,15 @@ namespace TPS_PAV.BusinessLayer
         {
             return oCursoDao.GetCursoBySearch(busqueda);
         }
+
+        public void BorrarCurso(Curso curso)
+        {
+            oCursoDao.DeleteCurso(curso);
+        }
+
+        public void ModificarCurso(Curso curso)
+        {
+            oCursoDao.ModifyCurso(curso);
+        }
     }
 }

@@ -35,12 +35,11 @@ namespace TPS_PAV.DataAccessLayer
             return listCurso;
         }
 
-        // SOLO TENER EN CUENTA LOS QUE TENGAN EN LA TABLA COMO BORRADO LOGICO = 0 
         public IList<Curso> GetAll()
         {
             List<Curso> listCurso = new List<Curso>();
 
-            var strSql = "SELECT * from Cursos";
+            var strSql = "SELECT * from Cursos WHERE borrado = 0";
 
             var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
 
@@ -68,6 +67,18 @@ namespace TPS_PAV.DataAccessLayer
 
             return oCurso;
             
+        }
+
+        public void DeleteCurso(Curso curso)
+        {
+
+            var sqlQuery = "UPDATE Cursos SET borrado = 1 WHERE id_curso = @idcurso";
+
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+            queryValues.Add("@idcurso", curso.IdCurso);
+
+            DataManager.GetInstance().EjecutarSQL(sqlQuery, queryValues);
         }
 
         public void InsertCurso(Curso curso)
@@ -99,6 +110,23 @@ namespace TPS_PAV.DataAccessLayer
             }
             return (int) lastID;
             
+        }
+
+        public void ModifyCurso(Curso curso)
+        {
+
+            var sqlQuery = "UPDATE Cursos SET nombre = @nombre, descripcion = @descripcion, fecha_vigencia = @fechaVigencia, id_categoria = @idcategoria WHERE id_curso = @idcurso";
+
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+            queryValues.Add("@idcurso", curso.IdCurso);
+            queryValues.Add("@nombre", curso.NombreCurso);
+            queryValues.Add("@descripcion", curso.Descripcion);
+            queryValues.Add("@fechaVigencia", curso.FechaVigencia);
+            queryValues.Add("@idcategoria", curso.Categoria.IdCategoria);
+
+            DataManager.GetInstance().EjecutarSQL(sqlQuery,queryValues);
+                       
         }
 
     }
