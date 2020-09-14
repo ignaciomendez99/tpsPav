@@ -24,6 +24,11 @@ namespace TPS_PAV.BusinessLayer
         {
             var usr = oUsuarioDao.GetUser(usuario);
 
+            if (usr == null)
+            {
+                return null;
+            }
+
             if (usr.Password != null && usr.Password.Equals(password))
             {
                 return usr;

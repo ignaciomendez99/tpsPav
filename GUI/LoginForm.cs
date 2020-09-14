@@ -40,8 +40,9 @@ namespace TPS_PAV
             var usr = usuarioService.ValidarUsuario(txUsuario.Text, txClave.Text);
             if (usr != null)
             {
-
-                this.Close();
+                MainForm main = new MainForm(usr);
+                main.Show();
+                this.Hide();
             }
             else
             {

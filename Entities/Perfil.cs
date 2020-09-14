@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPS_PAV.Entities
 {
-    class Perfil
+    public class Perfil
     {
         public int IdPerfil { get; set; }
         public string Nombre { get; set; } 
