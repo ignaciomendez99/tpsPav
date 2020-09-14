@@ -109,7 +109,7 @@
             // 
             // btAceptarAltaCurso
             // 
-            this.btAceptarAltaCurso.Location = new System.Drawing.Point(266, 334);
+            this.btAceptarAltaCurso.Location = new System.Drawing.Point(266, 310);
             this.btAceptarAltaCurso.Name = "btAceptarAltaCurso";
             this.btAceptarAltaCurso.Size = new System.Drawing.Size(75, 23);
             this.btAceptarAltaCurso.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 381);
+            this.ClientSize = new System.Drawing.Size(357, 346);
             this.Controls.Add(this.btAceptarAltaCurso);
             this.Controls.Add(this.txtDescripcionCurso);
             this.Controls.Add(this.label4);
@@ -132,7 +132,8 @@
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.label1);
             this.Name = "ABMCCursosForm";
-            this.Text = "ABMCCursosForm";
+            this.Text = "Nuevo Curso";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMCCursosForm_FormClosing);
             this.Load += new System.EventHandler(this.ABMCCursosForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

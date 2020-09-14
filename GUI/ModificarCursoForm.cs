@@ -71,5 +71,15 @@ namespace TPS_PAV.GUI
             
             this.Close();
         }
+
+        private void ModificarCursoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rpta;
+            rpta = MessageBox.Show("Seguro que desea salir?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rpta == DialogResult.No)
+                e.Cancel = true;
+            
+
+        }
     }
 }

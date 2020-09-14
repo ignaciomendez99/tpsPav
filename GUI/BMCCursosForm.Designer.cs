@@ -103,7 +103,7 @@
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.txBuscar);
             this.Name = "BMCCursosForm";
-            this.Text = "BMCCursosForm";
+            this.Text = "Cursos";
             this.Load += new System.EventHandler(this.BMCCursosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
             this.ResumeLayout(false);

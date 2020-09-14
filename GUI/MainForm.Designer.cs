@@ -53,7 +53,7 @@
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(642, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(642, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,7 +106,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(336, 29);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Usted se ha loggeado como:";
+            this.label1.Text = "Usted se ha logueado como:";
             // 
             // MainForm
             // 

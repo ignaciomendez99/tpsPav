@@ -151,7 +151,8 @@
             this.Controls.Add(this.txId);
             this.Controls.Add(this.label1);
             this.Name = "ModificarCursoForm";
-            this.Text = "ModificarCursoForm";
+            this.Text = "Modificar Curso";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarCursoForm_FormClosing);
             this.Load += new System.EventHandler(this.ModificarCursoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

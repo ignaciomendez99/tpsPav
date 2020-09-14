@@ -39,8 +39,8 @@ namespace TPS_PAV
             // 
             // bnIngresar
             // 
-            this.bnIngresar.Location = new System.Drawing.Point(88, 151);
-            this.bnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnIngresar.Location = new System.Drawing.Point(115, 140);
+            this.bnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.bnIngresar.Name = "bnIngresar";
             this.bnIngresar.Size = new System.Drawing.Size(100, 28);
             this.bnIngresar.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace TPS_PAV
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 37);
+            this.label1.Location = new System.Drawing.Point(18, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 17);
@@ -61,7 +61,7 @@ namespace TPS_PAV
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 86);
+            this.label2.Location = new System.Drawing.Point(32, 89);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 17);
@@ -70,16 +70,16 @@ namespace TPS_PAV
             // 
             // txUsuario
             // 
-            this.txUsuario.Location = new System.Drawing.Point(88, 37);
-            this.txUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txUsuario.Location = new System.Drawing.Point(83, 37);
+            this.txUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txUsuario.Name = "txUsuario";
             this.txUsuario.Size = new System.Drawing.Size(165, 22);
             this.txUsuario.TabIndex = 3;
             // 
             // txClave
             // 
-            this.txClave.Location = new System.Drawing.Point(88, 86);
-            this.txClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txClave.Location = new System.Drawing.Point(83, 86);
+            this.txClave.Margin = new System.Windows.Forms.Padding(4);
             this.txClave.Name = "txClave";
             this.txClave.Size = new System.Drawing.Size(165, 22);
             this.txClave.TabIndex = 4;
@@ -88,13 +88,13 @@ namespace TPS_PAV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 231);
+            this.ClientSize = new System.Drawing.Size(286, 186);
             this.Controls.Add(this.txClave);
             this.Controls.Add(this.txUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bnIngresar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
