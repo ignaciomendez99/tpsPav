@@ -33,6 +33,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoCursoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,10 +66,26 @@
             // 
             // cursosToolStripMenuItem
             // 
+            this.cursosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoCursoToolStripMenuItem,
+            this.nuevoCursoToolStripMenuItem1});
             this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
             this.cursosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.cursosToolStripMenuItem.Text = "Cursos";
-            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.cursosToolStripMenuItem_Click);
+            // 
+            // nuevoCursoToolStripMenuItem
+            // 
+            this.nuevoCursoToolStripMenuItem.Name = "nuevoCursoToolStripMenuItem";
+            this.nuevoCursoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuevoCursoToolStripMenuItem.Text = "Ver";
+            this.nuevoCursoToolStripMenuItem.Click += new System.EventHandler(this.nuevoCursoToolStripMenuItem_Click);
+            // 
+            // nuevoCursoToolStripMenuItem1
+            // 
+            this.nuevoCursoToolStripMenuItem1.Name = "nuevoCursoToolStripMenuItem1";
+            this.nuevoCursoToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.nuevoCursoToolStripMenuItem1.Text = "Nuevo";
+            this.nuevoCursoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoCursoToolStripMenuItem1_Click);
             // 
             // lbUsuario
             // 
@@ -104,5 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.ToolStripMenuItem nuevoCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoCursoToolStripMenuItem1;
     }
 }

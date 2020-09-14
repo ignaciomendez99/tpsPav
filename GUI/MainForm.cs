@@ -36,10 +36,18 @@ namespace TPS_PAV
             lbUsuario.Text = mainUser.NombreUsuario;
         }
 
-        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+
+        private void nuevoCursoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ABMCCursosForm ambcCursos = new ABMCCursosForm();
             ambcCursos.ShowDialog();
+        }
+
+        private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BMCCursosForm bmccCursos = new BMCCursosForm();
+            bmccCursos.ShowDialog();
 
         }
     }

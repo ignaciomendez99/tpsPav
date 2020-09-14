@@ -10,3 +10,4 @@ D:\UTN\PAV\TP\obj\Debug\TPS_PAV.exe
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.pdb
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.ABMCCursosForm.resources
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.csprojAssemblyReference.cache
+D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.BMCCursosForm.resources

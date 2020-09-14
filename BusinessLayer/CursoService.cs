@@ -21,5 +21,14 @@ namespace TPS_PAV.BusinessLayer
             oCursoDao.InsertCurso(curso);
         }
 
+        public IList<Curso> ObtenerCursos()
+        {
+            return oCursoDao.GetAll();
+        }
+
+        public IList<Curso> ObtenerCursoBuscado(string busqueda)
+        {
+            return oCursoDao.GetCursoBySearch(busqueda);
+        }
     }
 }
