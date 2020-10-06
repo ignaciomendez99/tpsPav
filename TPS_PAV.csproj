@@ -118,6 +118,9 @@
     <EmbeddedResource Include="GUI\ModificarCursoForm.resx">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TransaccionObjetivoCursoForm.resx">
+      <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -140,6 +143,7 @@
       <DependentUpon>BugTracker78710DataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\TPS_PAV.Entities.Curso.datasource" />
+    <None Include="Properties\DataSources\TPS_PAV.Entities.Objetivo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -154,5 +158,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\arrowDown.png" />
+    <Content Include="Resources\arrowUp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

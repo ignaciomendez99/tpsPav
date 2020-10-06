@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPS_PAV.Entities
 {
-    class Objetivo
+    public class Objetivo
     {
 
         public int IdObjetivo { get; set; }
