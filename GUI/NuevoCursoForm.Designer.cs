@@ -1,6 +1,6 @@
 ﻿namespace TPS_PAV.GUI
 {
-    partial class ABMCCursosForm
+    partial class NuevoCursoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,6 +51,7 @@
             // txtNombreCurso
             // 
             this.txtNombreCurso.Location = new System.Drawing.Point(85, 10);
+            this.txtNombreCurso.MaxLength = 50;
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(256, 22);
             this.txtNombreCurso.TabIndex = 1;
@@ -102,6 +103,7 @@
             // txtDescripcionCurso
             // 
             this.txtDescripcionCurso.Location = new System.Drawing.Point(19, 181);
+            this.txtDescripcionCurso.MaxLength = 50;
             this.txtDescripcionCurso.Name = "txtDescripcionCurso";
             this.txtDescripcionCurso.Size = new System.Drawing.Size(322, 107);
             this.txtDescripcionCurso.TabIndex = 7;
@@ -117,7 +119,7 @@
             this.btAceptarAltaCurso.UseVisualStyleBackColor = true;
             this.btAceptarAltaCurso.Click += new System.EventHandler(this.btAceptarAltaCurso_Click);
             // 
-            // ABMCCursosForm
+            // NuevoCursoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,7 +133,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.label1);
-            this.Name = "ABMCCursosForm";
+            this.Name = "NuevoCursoForm";
             this.Text = "Nuevo Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMCCursosForm_FormClosing);
             this.Load += new System.EventHandler(this.ABMCCursosForm_Load);

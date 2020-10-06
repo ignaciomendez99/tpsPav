@@ -13,11 +13,11 @@ using TPS_PAV.Entities;
 namespace TPS_PAV.GUI
 {
     // HAY QUE IMPLEMENTAR EL SERVICE DE CATEGORIA Y CURSOS COMO ATRIBUTOS READONLY DEL FORM
-    public partial class ABMCCursosForm : Form
+    public partial class NuevoCursoForm : Form
     {
         private bool creado = false;
 
-        public ABMCCursosForm()
+        public NuevoCursoForm()
         {
             InitializeComponent();
         }

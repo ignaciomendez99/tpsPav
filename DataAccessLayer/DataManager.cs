@@ -115,7 +115,7 @@ namespace TPS_PAV.DataAccessLayer
         ///          El error de conexión se produce:
         ///              a) durante la apertura de la conexión
         ///              b) durante la ejecución del comando.
-        public object ConsultaSQLScalar(string strSql)
+        public object ConsultaSQLScalar(string strSql, Dictionary<string, object> prs = null)
         {
             SqlCommand cmd = new SqlCommand();
             try
@@ -124,6 +124,15 @@ namespace TPS_PAV.DataAccessLayer
                 cmd.CommandType = CommandType.Text;
                 // Establece la instrucción a ejecutar
                 cmd.CommandText = strSql;
+
+                if (prs != null)
+                {
+                    foreach (var item in prs)
+                    {
+                        cmd.Parameters.AddWithValue(item.Key, item.Value);
+                    }
+                }
+
                 return cmd.ExecuteScalar();
             }
             catch (SqlException ex)

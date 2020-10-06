@@ -26,6 +26,11 @@ namespace TPS_PAV.BusinessLayer
             return oCursoDao.GetAll();
         }
 
+        public IList<Curso> ObtenerCursosYEliminados()
+        {
+            return oCursoDao.GetAllYEliminados();
+        }
+
         public IList<Curso> ObtenerCursoBuscado(string busqueda)
         {
             return oCursoDao.GetCursoBySearch(busqueda);
@@ -39,6 +44,11 @@ namespace TPS_PAV.BusinessLayer
         public void ModificarCurso(Curso curso)
         {
             oCursoDao.ModifyCurso(curso);
+        }
+
+        public bool CheckCursoEliminado(Curso curso)
+        {
+            return oCursoDao.CheckCursoEliminado(curso);
         }
     }
 }

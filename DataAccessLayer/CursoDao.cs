@@ -34,11 +34,44 @@ namespace TPS_PAV.DataAccessLayer
             return listCurso;
         }
 
+
+        public bool CheckCursoEliminado(Curso curso)
+        {
+
+            var strSql = "Select borrado from cursos where id_curso = @idcurso";
+            Dictionary<string, object> sqlValues = new Dictionary<string, object>()
+            {
+                {"@idcurso", curso.IdCurso}
+            };
+
+            var res = Convert.ToInt32(DataManager.GetInstance().ConsultaSQLScalar(strSql,sqlValues));
+            if (res == 1) return true;
+            else return false;
+            
+        }
+        
+
         public IList<Curso> GetAll()
         {
             List<Curso> listCurso = new List<Curso>();
 
             var strSql = "SELECT * from Cursos WHERE borrado = 0";
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listCurso.Add(MappingCurso(row));
+            }
+
+            return listCurso;
+        }
+
+        public IList<Curso> GetAllYEliminados()
+        {
+            List<Curso> listCurso = new List<Curso>();
+
+            var strSql = "SELECT * from Cursos";
 
             var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
 

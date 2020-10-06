@@ -41,8 +41,10 @@ namespace TPS_PAV
             if (usr != null)
             {
                 MainForm main = new MainForm(usr);
-                main.Show();
+              
                 this.Hide();
+                main.ShowDialog();
+                this.Close();
             }
             else
             {
