@@ -47,6 +47,7 @@ namespace TPS_PAV
         {
             TransaccionObjetivoCursoForm t = new TransaccionObjetivoCursoForm();
             t.ShowDialog();
+            //Test
         }
     }
 }
