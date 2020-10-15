@@ -39,7 +39,7 @@ namespace TPS_PAV.GUI
         private void BMCCursosForm_Load(object sender, EventArgs e)
         {
             iniciarDataGridView();
-            dgvCursos.MultiSelect = false;
+            // dgvCursos.MultiSelect = false;
             btModificarCurso.Enabled = false;
         }
 
@@ -66,6 +66,7 @@ namespace TPS_PAV.GUI
             DialogResult rpta;
 
             rpta = MessageBox.Show("Seguro que desea eliminar el curso seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
             if (rpta == DialogResult.Yes)
             {
                 Curso cursoABorrar = ObtenerCursoSeleccionado();

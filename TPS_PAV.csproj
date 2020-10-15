@@ -65,6 +65,12 @@
     <Compile Include="Entities\Objetivo.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
+    <Compile Include="GUI\ABMCObjetivosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ABMCObjetivosForm.Designer.cs">
+      <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NuevoCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="GUI\ModificarCursoForm.Designer.cs">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NuevoObjetivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NuevoObjetivoForm.Designer.cs">
+      <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\TransaccionObjetivoCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ABMCObjetivosForm.resx">
+      <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\NuevoCursoForm.resx">
       <DependentUpon>NuevoCursoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ModificarCursoForm.resx">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NuevoObjetivoForm.resx">
+      <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TransaccionObjetivoCursoForm.resx">
       <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>

@@ -12,3 +12,5 @@ D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.ModificarCursoForm.resources
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.NuevoCursoForm.resources
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.ABMCursosForm.resources
 D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.TransaccionObjetivoCursoForm.resources
+D:\UTN\PAV\TP\obj\Debug\TPS_PAV.csprojAssemblyReference.cache
+D:\UTN\PAV\TP\obj\Debug\TPS_PAV.GUI.ABMCObjetivosForm.resources

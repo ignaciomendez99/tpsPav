@@ -39,7 +39,7 @@ namespace TPS_PAV
             // 
             // bnIngresar
             // 
-            this.bnIngresar.Location = new System.Drawing.Point(115, 140);
+            this.bnIngresar.Location = new System.Drawing.Point(211, 129);
             this.bnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.bnIngresar.Name = "bnIngresar";
             this.bnIngresar.Size = new System.Drawing.Size(100, 28);
@@ -51,7 +51,7 @@ namespace TPS_PAV
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 40);
+            this.label1.Location = new System.Drawing.Point(42, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 17);
@@ -61,35 +61,35 @@ namespace TPS_PAV
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 89);
+            this.label2.Location = new System.Drawing.Point(18, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Clave";
+            this.label2.Text = "Contraseña";
             // 
             // txUsuario
             // 
-            this.txUsuario.Location = new System.Drawing.Point(83, 37);
+            this.txUsuario.Location = new System.Drawing.Point(107, 37);
             this.txUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txUsuario.Name = "txUsuario";
-            this.txUsuario.Size = new System.Drawing.Size(165, 22);
+            this.txUsuario.Size = new System.Drawing.Size(204, 22);
             this.txUsuario.TabIndex = 3;
             // 
             // txClave
             // 
-            this.txClave.Location = new System.Drawing.Point(83, 86);
+            this.txClave.Location = new System.Drawing.Point(107, 83);
             this.txClave.Margin = new System.Windows.Forms.Padding(4);
             this.txClave.Name = "txClave";
             this.txClave.PasswordChar = '*';
-            this.txClave.Size = new System.Drawing.Size(165, 22);
+            this.txClave.Size = new System.Drawing.Size(204, 22);
             this.txClave.TabIndex = 4;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 186);
+            this.ClientSize = new System.Drawing.Size(329, 170);
             this.Controls.Add(this.txClave);
             this.Controls.Add(this.txUsuario);
             this.Controls.Add(this.label2);

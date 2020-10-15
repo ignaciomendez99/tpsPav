@@ -33,12 +33,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.objetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.actualizarObjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.actualizarObjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cursosToolStripMenuItem});
+            this.cursosToolStripMenuItem,
+            this.objetivosToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.archivoToolStripMenuItem.Text = "Soporte";
@@ -77,6 +79,13 @@
             this.cursosToolStripMenuItem.Text = "Cursos";
             this.cursosToolStripMenuItem.Click += new System.EventHandler(this.nuevoCursoToolStripMenuItem_Click);
             // 
+            // objetivosToolStripMenuItem
+            // 
+            this.objetivosToolStripMenuItem.Name = "objetivosToolStripMenuItem";
+            this.objetivosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.objetivosToolStripMenuItem.Text = "Objetivos";
+            this.objetivosToolStripMenuItem.Click += new System.EventHandler(this.objetivosToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -84,6 +93,13 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.ayudaToolStripMenuItem.Text = "Operaciones";
+            // 
+            // actualizarObjetivosToolStripMenuItem
+            // 
+            this.actualizarObjetivosToolStripMenuItem.Name = "actualizarObjetivosToolStripMenuItem";
+            this.actualizarObjetivosToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
+            this.actualizarObjetivosToolStripMenuItem.Text = "Actualizar Objetivos";
+            this.actualizarObjetivosToolStripMenuItem.Click += new System.EventHandler(this.actualizarObjetivosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -115,13 +131,6 @@
             this.label1.Size = new System.Drawing.Size(336, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usted se ha logueado como:";
-            // 
-            // actualizarObjetivosToolStripMenuItem
-            // 
-            this.actualizarObjetivosToolStripMenuItem.Name = "actualizarObjetivosToolStripMenuItem";
-            this.actualizarObjetivosToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.actualizarObjetivosToolStripMenuItem.Text = "Actualizar Objetivos";
-            this.actualizarObjetivosToolStripMenuItem.Click += new System.EventHandler(this.actualizarObjetivosToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -155,5 +164,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem actualizarObjetivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem objetivosToolStripMenuItem;
     }
 }
