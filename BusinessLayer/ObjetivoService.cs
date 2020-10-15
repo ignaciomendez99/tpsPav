@@ -38,6 +38,11 @@ namespace TPS_PAV.BusinessLayer
             return objetivoDao.NuevoObjetivo(nombre, descripcion);
         }
 
+        public void ModificarObjetivo(Objetivo objAmod)
+        {
+            objetivoDao.EditObjetivo(objAmod);
+        }
+
         public IList<Objetivo> GetObjetivoBySearch(string searchParam)
         {
             return objetivoDao.GetObjetivoBySearch(searchParam);

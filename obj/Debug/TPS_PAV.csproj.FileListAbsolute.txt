@@ -15,3 +15,21 @@ D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.NuevoCursoForm.resources
 D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.ABMCursosForm.resources
 D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.NuevoObjetivoForm.resources
 D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.TransaccionObjetivoCursoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csprojAssemblyReference.cache
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ABMCObjetivosForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ModificarObjetivoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.NuevoCursoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ABMCursosForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.LoginForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.MainForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ModificarCursoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.NuevoObjetivoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.TransaccionObjetivoCursoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.Properties.Resources.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csproj.GenerateResource.cache
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csproj.CoreCompileInputs.cache
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.exe
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.pdb
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe.config
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.pdb

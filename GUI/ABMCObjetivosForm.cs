@@ -172,5 +172,12 @@ namespace TPS_PAV.GUI
             btnBorrar.Enabled = !obEliminado;
         
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModificarObjetivoForm mcf = new ModificarObjetivoForm(ObtenerObjetivoSeleccionado());
+            mcf.ShowDialog();
+            InicarDataGridView();
+        }
     }
 }

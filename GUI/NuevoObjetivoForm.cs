@@ -39,8 +39,7 @@ namespace TPS_PAV.GUI
             else
                 MessageBox.Show("No se ha agregado el objetivo", "Aviso", MessageBoxButtons.OK);
 
-            txtBoxDescripcion.Text = "";
-            txtBoxNombre.Text = "";
+            this.Close();
 
         }
     }

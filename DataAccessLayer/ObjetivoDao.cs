@@ -54,11 +54,20 @@ namespace TPS_PAV.BusinessLayer
 
         }
 
+        public void EditObjetivo(Objetivo objAmod)
+        {
+            var strSql = "UPDATE Objetivos SET nombre_corto = @nombrecorto, nombre_largo = @nombrelargo WHERE id_objetivo = @idobjetivo";
 
 
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+            queryValues.Add("@nombrecorto", objAmod.NombreCorto);
+            queryValues.Add("@nombrelargo", objAmod.NombreLargo);
+            queryValues.Add("@idobjetivo", objAmod.IdObjetivo);
 
-        
+            DataManager.GetInstance().EjecutarSQL(strSql, queryValues);
 
+            
+        }
 
         public IList<Objetivo> GetAllExceptOwnedByCurso(Curso curso)
         {

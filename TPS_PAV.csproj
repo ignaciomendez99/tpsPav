@@ -71,6 +71,12 @@
     <Compile Include="GUI\ABMCObjetivosForm.Designer.cs">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ModificarObjetivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ModificarObjetivoForm.Designer.cs">
+      <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NuevoCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\ABMCObjetivosForm.resx">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ModificarObjetivoForm.resx">
+      <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NuevoCursoForm.resx">
       <DependentUpon>NuevoCursoForm.cs</DependentUpon>
