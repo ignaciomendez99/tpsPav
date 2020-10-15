@@ -152,6 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txId);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModificarCursoForm";
             this.Text = "Modificar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarCursoForm_FormClosing);

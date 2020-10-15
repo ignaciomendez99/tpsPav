@@ -137,6 +137,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreCurso);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NuevoCursoForm";
             this.Text = "Nuevo Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMCCursosForm_FormClosing);

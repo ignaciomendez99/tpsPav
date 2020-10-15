@@ -57,9 +57,9 @@ namespace TPS_PAV.GUI
             
             if (rpta == DialogResult.Yes)
             {
-                Curso cursoABorrar = ObtenerCursoSeleccionado();
+                List<Curso> cursosList = ObtenerCursosSeleccionados();
 
-                servicioCursos.BorrarCurso(cursoABorrar);
+                servicioCursos.DeleteCursos(cursosList);
 
                 iniciarDataGridView();
             }            
@@ -87,6 +87,34 @@ namespace TPS_PAV.GUI
                 return curso;
             }
             return null;
+
+        }
+
+        private List<Curso> ObtenerCursosSeleccionados()
+        {
+            DataGridViewSelectedRowCollection elementosSeleccionados = dgvCursos.SelectedRows;
+            DataGridViewRow row;
+
+
+            IEnumerator Enumerator = elementosSeleccionados.GetEnumerator();
+
+            Enumerator.Reset();
+
+            List<Curso> cursosList = new List<Curso>();
+
+            while (Enumerator.MoveNext())
+
+            {
+
+                row = (DataGridViewRow)Enumerator.Current;
+
+                Curso curso = (Curso)row.DataBoundItem;
+
+                // Como solo se puede elegir un objetivo, devuelve el primero que encuentra
+                cursosList.Add(curso);
+            }
+
+            return cursosList;
 
         }
 
