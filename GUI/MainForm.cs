@@ -56,5 +56,10 @@ namespace TPS_PAV
             abmcObjetivos.ShowDialog();
 
         }
+
+        private void ayudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Grupo Nro: 3 - PAVI 2020\nSala, Lorenzo - Mendez, Ignacio - Zago, Agustín - Otero, Gastón", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

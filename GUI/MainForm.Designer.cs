@@ -112,6 +112,7 @@
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
             this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(65, 24);
             this.ayudaToolStripMenuItem1.Text = "Ayuda";
+            this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
             // 
             // lbUsuario
             // 
