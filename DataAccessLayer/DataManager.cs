@@ -11,6 +11,7 @@ namespace TPS_PAV.DataAccessLayer
     class DataManager
     {
         private SqlConnection dbConnection;
+        private SqlTransaction dbTransaction;
 
 
         private static DataManager instance;
@@ -142,5 +143,29 @@ namespace TPS_PAV.DataAccessLayer
         }
 
         // Begin transaction
+        public void BeginTransaction()
+        {
+            if (dbConnection.State == ConnectionState.Open)
+                dbTransaction = dbConnection.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+
+        public void Dispose()
+        {
+            this.Close();
+        }
+
+
     }
 }
