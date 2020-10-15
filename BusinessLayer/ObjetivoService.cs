@@ -22,7 +22,15 @@ namespace TPS_PAV.BusinessLayer
             return objetivoDao.GetAll();
         }
 
+        public IList<Objetivo> ObtenerTodosMenosEnCurso(Curso curso)
+        {
+            return objetivoDao.GetAllExceptOwnedByCurso(curso);
+        }
 
+        public IList<Objetivo> ObtenerTodosEnCurso(Curso curso)
+        {
+            return objetivoDao.GetAllOwnedByCurso(curso);
+        }
 
     }
 }

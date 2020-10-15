@@ -30,6 +30,61 @@ namespace TPS_PAV.BusinessLayer
 
         }
 
+        public IList<Objetivo> GetAllOwnedByCurso(Curso curso)
+        {
+            List<Objetivo> lista = new List<Objetivo>();
+
+            var strSql = "SELECT * FROM Objetivos o WHERE o.borrado = 0 AND id_objetivo IN( SELECT oc.id_objetivo FROM ObjetivosCursos oc WHERE oc.id_curso = @idcurso)";
+
+
+
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+            queryValues.Add("@idcurso", curso.IdCurso);
+
+            var res = DataManager.GetInstance().ConsultaSQL(strSql, queryValues);
+
+
+            foreach (DataRow row in res.Rows)
+            {
+                lista.Add(MapperObjetivo(row));
+
+            }
+
+            return lista;
+
+        }
+
+
+
+
+        
+
+
+        public IList<Objetivo> GetAllExceptOwnedByCurso(Curso curso)
+        {
+            List<Objetivo> lista = new List<Objetivo>();
+
+            var strSql = "SELECT * FROM Objetivos o WHERE o.borrado = 0 AND id_objetivo NOT IN( SELECT oc.id_objetivo FROM ObjetivosCursos oc WHERE oc.id_curso = @idcurso)";
+
+
+
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+            queryValues.Add("@idcurso", curso.IdCurso);
+
+            var res = DataManager.GetInstance().ConsultaSQL(strSql, queryValues);
+
+
+            foreach (DataRow row in res.Rows)
+            {
+                lista.Add(MapperObjetivo(row));
+
+            }
+
+            return lista;
+
+        }
+
+
         public Objetivo MapperObjetivo(DataRow row)
         {
 

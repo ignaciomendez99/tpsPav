@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPS_PAV.BusinessLayer;
 using TPS_PAV.Entities;
 
@@ -160,6 +161,67 @@ namespace TPS_PAV.DataAccessLayer
             DataManager.GetInstance().EjecutarSQL(sqlQuery,queryValues);
                        
         }
+        public bool TransactObjetivoCurso(List<Objetivo> objListToAdd, List<Objetivo> objListToRemove , Curso curso)
+        {
+
+            DataManager dm = DataManager.GetInstance();
+
+            Boolean succes = false;
+            try
+            {
+                dm.BeginTransaction();
+
+                foreach (Objetivo objt in objListToAdd)
+                {
+
+                    var sqlQuery = "DELETE FROM ObjetivosCurso WHERE id_objetivo = @idobjetivo AND id_curso = @idcurso";
+
+                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
+                    queryValues.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValues.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuery, queryValues);
+                }
+
+
+                foreach (Objetivo objt in objListToAdd)
+                {
+
+                    var sqlQuery = "INSERT INTO ObjetivosCurso (id_objetivo, id_curso, puntos, borrado) VALUES (@idobjetivo, @idcurso, 0, 0)";
+
+                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
+                    queryValues.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValues.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuery, queryValues);
+                }
+
+
+                dm.Commit();
+                succes = true;
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                dm.Rollback();
+            }
+
+            return succes;
+
+        }
+
+        public Curso getCursoById(int idCurso)
+        {
+
+            var sqlQuery = "SELECT * FROM Cursos WHERE id_curso = @idcurso ";
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+            queryValues.Add("@idcurso", idCurso);
+            var cursoEncontrado = DataManager.GetInstance().ConsultaSQL(sqlQuery, queryValues);
+            if (cursoEncontrado.Rows.Count == 0)
+                return null;
+            return MappingCurso(cursoEncontrado.Rows[0]);
+        }
+
 
     }
 }

@@ -97,6 +97,9 @@ namespace TPS_PAV.DataAccessLayer
                 }
 
                 // Retorna el resultado de ejecutar el comando
+
+                cmd.Transaction = dbTransaction;
+
                 rtdo = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)

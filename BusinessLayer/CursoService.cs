@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,5 +51,23 @@ namespace TPS_PAV.BusinessLayer
         {
             return oCursoDao.CheckCursoEliminado(curso);
         }
+
+        public Curso ObtenerCursoById(int idCurso)
+        {
+
+            return oCursoDao.getCursoById(idCurso);
+
+        }
+
+        public bool TransaccionObjetivosPorCurso(BindingList<Objetivo> objAagregar, BindingList<Objetivo> objAborrar, Curso cur)
+        {
+        
+            List<Objetivo> objAagregarList = new List<Objetivo>(objAagregar);
+            List<Objetivo> objAborrarList = new List<Objetivo>(objAborrar);
+            return oCursoDao.TransactObjetivoCurso(objAagregarList, objAborrarList, cur);
+        
+        }
+
+
     }
 }
