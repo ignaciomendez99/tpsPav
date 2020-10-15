@@ -62,7 +62,9 @@ namespace TPS_PAV.GUI
                 servicioCursos.DeleteCursos(cursosList);
 
                 iniciarDataGridView();
-            }            
+            }
+
+            checkMostrarEliminados.Checked = false;
 
         }
 

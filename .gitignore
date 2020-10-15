@@ -3,3 +3,6 @@
 ################################################################################
 
 /obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/obj/Debug
+/bin/Debug
+/.vs/TPS_PAV/v16
