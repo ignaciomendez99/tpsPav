@@ -18,11 +18,17 @@ namespace TPS_PAV.GUI
         private CursoService curService;
         private CategoriaService catService;
         private bool modificado = false;
+        private bool unCurso = false;
 
-        public ModificarCursoForm(Curso curAMod)
+        public ModificarCursoForm(List<Curso> listCurMod)
         {
             InitializeComponent();
-            cursoModificar = curAMod;
+            if(listCurMod.Count == 1)
+            {
+                cursoModificar = listCurMod[0];
+                unCurso = true;
+            }
+            
             catService = new CategoriaService();
             curService = new CursoService();
 
@@ -45,18 +51,23 @@ namespace TPS_PAV.GUI
 
         private void ModificarCursoForm_Load(object sender, EventArgs e)
         {
-            IList<Categoria> categorias = catService.ObtenerTodos();
-            LlenarCombo(cbCategoriaCursos, categorias, "Nombre", "IdCategoria");
-            txId.Text = cursoModificar.IdCurso.ToString();
-            txDescripcion.Text = cursoModificar.Descripcion;
+            if (unCurso)
+            {
 
-            DateTime dt = cursoModificar.FechaVigencia;
-            string fecha = String.Format("{0:dd/MM/yyyy}", dt);
+                IList<Categoria> categorias = catService.ObtenerTodos();
+                LlenarCombo(cbCategoriaCursos, categorias, "Nombre", "IdCategoria");
+                txId.Text = cursoModificar.IdCurso.ToString();
+                txDescripcion.Text = cursoModificar.Descripcion;
 
-            txFechaVigencia.Text = fecha;
-            txNombre.Text = cursoModificar.NombreCurso;
+                DateTime dt = cursoModificar.FechaVigencia;
+                string fecha = String.Format("{0:dd/MM/yyyy}", dt);
 
-            cbCategoriaCursos.SelectedIndex = cbCategoriaCursos.FindStringExact(cursoModificar.Categoria.Nombre);
+                txFechaVigencia.Text = fecha;
+                txNombre.Text = cursoModificar.NombreCurso;
+
+                cbCategoriaCursos.SelectedIndex = cbCategoriaCursos.FindStringExact(cursoModificar.Categoria.Nombre);
+            }
+
         }
 
         private void btModificarCurso_Click(object sender, EventArgs e)
