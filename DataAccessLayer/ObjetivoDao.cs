@@ -84,6 +84,40 @@ namespace TPS_PAV.BusinessLayer
 
         }
 
+        public bool DeleteObjetivos(List<Objetivo> objList)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            bool succes = false;
+            try
+            {
+                dm.BeginTransaction();
+
+
+                foreach (Objetivo objt in objList)
+                {
+                    
+                    var sqlQuery = "UPDATE Objetivos SET borrado = 1 WHERE id_objetivo = @idobjetivo";
+
+                    Dictionary<string, object> queryValuesAdd = new Dictionary<string, object>();
+                    queryValuesAdd.Add("@idobjetivo", objt.IdObjetivo);
+
+                    dm.EjecutarSQL(sqlQuery, queryValuesAdd);
+                
+                }
+
+
+                dm.Commit();
+                succes = true;
+            } 
+            catch(Exception ex)
+            {
+                dm.Rollback();
+            }
+
+            return succes;
+
+        }
 
         public Objetivo MapperObjetivo(DataRow row)
         {

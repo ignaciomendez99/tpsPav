@@ -73,5 +73,10 @@ namespace TPS_PAV.BusinessLayer
         
         }
 
+        public bool DeleteCursos(List<Curso> cursosList)
+        {
+            return oCursoDao.DeleteCursos(cursosList); 
+        }
+
     }
 }

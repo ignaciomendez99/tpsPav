@@ -36,6 +36,7 @@
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bnBorrarCurso = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,10 +46,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelCantidad = new System.Windows.Forms.Label();
-            this.cursoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txBuscar
@@ -129,6 +129,10 @@
             this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
             this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cursoBindingSource1
+            // 
+            this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // cursoBindingSource
             // 
@@ -212,10 +216,6 @@
             this.labelCantidad.TabIndex = 11;
             this.labelCantidad.Text = "0";
             // 
-            // cursoBindingSource1
-            // 
-            this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
-            // 
             // ABMCursosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,12 +231,13 @@
             this.Controls.Add(this.bnBorrarCurso);
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.txBuscar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ABMCursosForm";
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.BMCCursosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

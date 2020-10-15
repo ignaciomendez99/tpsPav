@@ -102,17 +102,48 @@ namespace TPS_PAV.GUI
 
         }
 
+        private List<Objetivo> ObtenerObjetivosSeleccionados()
+        {
+            DataGridViewSelectedRowCollection elementosSeleccionados = dgv_Objetivos.SelectedRows;
+            DataGridViewRow row;
+
+
+            IEnumerator Enumerator = elementosSeleccionados.GetEnumerator();
+
+            Enumerator.Reset();
+
+            List<Objetivo> objetivosList = new List<Objetivo>();
+
+            while (Enumerator.MoveNext())
+
+            {
+
+                row = (DataGridViewRow)Enumerator.Current;
+
+                Objetivo objetivo = (Objetivo)row.DataBoundItem;
+
+                // Como solo se puede elegir un objetivo, devuelve el primero que encuentra
+                objetivosList.Add( objetivo );
+            }
+
+            return objetivosList;
+
+        }
+
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             DialogResult rpta;
 
-            rpta = MessageBox.Show("Seguro que desea eliminar el curso seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            rpta = MessageBox.Show("Seguro que desea eliminar los objetivos seleccionados?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (rpta == DialogResult.Yes)
             {
-                Objetivo objetivoABorrar = ObtenerObjetivoSeleccionado();
 
-                objetivoService.DeleteObjetivo(objetivoABorrar);
+                //Objetivo objetivoABorrar = ObtenerObjetivoSeleccionado();
+
+                List<Objetivo> objList = ObtenerObjetivosSeleccionados();
+
+                objetivoService.DeleteObjetivos(objList);
 
                 InicarDataGridView();
             }

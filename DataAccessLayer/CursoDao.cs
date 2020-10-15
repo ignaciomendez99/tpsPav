@@ -137,6 +137,40 @@ namespace TPS_PAV.DataAccessLayer
             DataManager.GetInstance().EjecutarSQL(sqlQuery, queryValues);
         }
 
+        public bool DeleteCursos(List<Curso> cursosList)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            bool success = false;
+            try
+            {
+                dm.BeginTransaction();
+                foreach(Curso curso in cursosList)
+                {
+                    var sqlQuery = "UPDATE Cursos SET borrado = 1 WHERE id_curso = @idCurso";
+                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+                    queryValues.Add("@idCurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuery, queryValues);
+                }
+
+                dm.Commit();
+                success = true;
+
+
+            }
+
+            catch (Exception e)
+            {
+                dm.Rollback();
+
+            }
+
+            return success;
+
+        }
+
         public void InsertCurso(Curso curso)
         {
 

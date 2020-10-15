@@ -53,6 +53,11 @@ namespace TPS_PAV.BusinessLayer
             return objetivoDao.DeleteObjetivo(objetivo);
         }
 
+        public bool DeleteObjetivos(List<Objetivo> objList)
+        {
+            return objetivoDao.DeleteObjetivos(objList);
+        }
+
         public IList<Objetivo> GetObjetivoBySearchEliminados(string searchParam)
         {
             return objetivoDao.GetObjetivoBySearchEliminados(searchParam);
