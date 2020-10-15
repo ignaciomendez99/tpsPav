@@ -7,6 +7,8 @@ using TPS_PAV.Entities;
 
 namespace TPS_PAV.BusinessLayer
 {
+
+
     public class ObjetivoService
     {
 
@@ -22,18 +24,34 @@ namespace TPS_PAV.BusinessLayer
             return objetivoDao.GetAll();
         }
 
-        public void NuevoObjetivo()
+        public bool NuevoObjetivo(string nombre, string descripcion)
         {
-            var strSql = "insert into Objetivos(id_objetivo, nombre_largo, nombre_corto, borrado) values (@id,@nombreLargo,@nombreCorto,0);";
-
-            Dictionary<string, object> sqlValues = new Dictionary<string, object>
-            {
-                {"@id",  }
-            }
-
+            return objetivoDao.NuevoObjetivo(nombre, descripcion);
         }
 
+        public IList<Objetivo> GetObjetivoBySearch(string searchParam)
+        {
+            return objetivoDao.GetObjetivoBySearch(searchParam);
+        }
 
+        public IList<Objetivo> GetAllYEliminados()
+        {
+            return objetivoDao.GetAllYEliminados();
+        }
 
+        public bool DeleteObjetivo(Objetivo objetivo)
+        {
+            return objetivoDao.DeleteObjetivo(objetivo);
+        }
+
+        public IList<Objetivo> GetObjetivoBySearchEliminados(string searchParam)
+        {
+            return objetivoDao.GetObjetivoBySearchEliminados(searchParam);
+        }
+
+        public bool CheckObjetivoEliminado(Objetivo ob)
+        {
+            return objetivoDao.CheckObjetivoEliminado(ob);
+        }
     }
 }

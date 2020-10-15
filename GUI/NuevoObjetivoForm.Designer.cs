@@ -56,6 +56,7 @@
             // txtBoxNombre
             // 
             this.txtBoxNombre.Location = new System.Drawing.Point(108, 25);
+            this.txtBoxNombre.MaxLength = 50;
             this.txtBoxNombre.Name = "txtBoxNombre";
             this.txtBoxNombre.Size = new System.Drawing.Size(189, 22);
             this.txtBoxNombre.TabIndex = 2;
@@ -63,6 +64,7 @@
             // txtBoxDescripcion
             // 
             this.txtBoxDescripcion.Location = new System.Drawing.Point(108, 63);
+            this.txtBoxDescripcion.MaxLength = 100;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
             this.txtBoxDescripcion.Size = new System.Drawing.Size(189, 22);
             this.txtBoxDescripcion.TabIndex = 3;

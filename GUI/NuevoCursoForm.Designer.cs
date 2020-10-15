@@ -55,6 +55,7 @@
             this.txtNombreCurso.Name = "txtNombreCurso";
             this.txtNombreCurso.Size = new System.Drawing.Size(256, 22);
             this.txtNombreCurso.TabIndex = 1;
+            this.txtNombreCurso.TextChanged += new System.EventHandler(this.txtNombreCurso_TextChanged);
             // 
             // label2
             // 
@@ -73,6 +74,7 @@
             this.txtFechaCurso.Size = new System.Drawing.Size(79, 22);
             this.txtFechaCurso.TabIndex = 3;
             this.txtFechaCurso.ValidatingType = typeof(System.DateTime);
+            this.txtFechaCurso.TextChanged += new System.EventHandler(this.txtFechaCurso_TextChanged);
             // 
             // label3
             // 
@@ -90,6 +92,7 @@
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(256, 24);
             this.cbCategoria.TabIndex = 5;
+            this.cbCategoria.TextChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -108,6 +111,7 @@
             this.txtDescripcionCurso.Size = new System.Drawing.Size(322, 107);
             this.txtDescripcionCurso.TabIndex = 7;
             this.txtDescripcionCurso.Text = "";
+            this.txtDescripcionCurso.TextChanged += new System.EventHandler(this.txtDescripcionCurso_TextChanged);
             // 
             // btAceptarAltaCurso
             // 
