@@ -136,7 +136,15 @@ namespace TPS_PAV.GUI
         private void bnConfirmarTransaccion_Click(object sender, EventArgs e)
         {
             bool exitCod = cursoService.TransaccionObjetivosPorCurso(objTieneList, objNoTieneList, obtenerCursoSeleccionado());
-            MessageBox.Show(exitCod.ToString());
+
+            if (exitCod)
+            {
+                MessageBox.Show("Se modificaron los objetivos por curso con exito");
+            } 
+            else
+            {
+                MessageBox.Show("Error en la modificación de objetivos por curso");
+            }
         }
     }
 }
