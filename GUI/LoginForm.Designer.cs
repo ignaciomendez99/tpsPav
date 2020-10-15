@@ -84,6 +84,7 @@ namespace TPS_PAV
             this.txClave.PasswordChar = '*';
             this.txClave.Size = new System.Drawing.Size(204, 22);
             this.txClave.TabIndex = 4;
+            this.txClave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txClave_KeyPress);
             // 
             // LoginForm
             // 

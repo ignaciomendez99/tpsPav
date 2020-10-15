@@ -46,6 +46,9 @@ namespace TPS_PAV.GUI
         {
             Curso curso = obtenerCurso();
             CursoService cser = new CursoService();
+
+
+
             cser.AgregarCurso(curso);
             MessageBox.Show("Se creó el curso con éxito.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.None);
             this.creado = true;
@@ -70,6 +73,12 @@ namespace TPS_PAV.GUI
             return curso;
         }
 
+        private void EnableButtonAceptar()
+        {
+            btAceptarAltaCurso.Enabled = (txtNombreCurso.Text != "" || txtNombreCurso.Visible == false) && (txtFechaCurso.Text != "  /  /" || txtFechaCurso.Visible == false) && (cbCategoria.Text != "" || cbCategoria.Visible == false);
+        }
+
+
         private void ABMCCursosForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult rpta;
@@ -80,6 +89,31 @@ namespace TPS_PAV.GUI
                 if (rpta == DialogResult.No)
                     e.Cancel = true;
             }
+        }
+
+        private void txtNombreCurso_TextChanged(object sender, EventArgs e)
+        {
+            EnableButtonAceptar();
+        }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EnableButtonAceptar();
+        }
+
+        private void txtFechaCurso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            EnableButtonAceptar();
+        }
+
+        private void txtDescripcionCurso_TextChanged(object sender, EventArgs e)
+        {
+            EnableButtonAceptar();
+        }
+
+        private void txtFechaCurso_TextChanged(object sender, EventArgs e)
+        {
+            EnableButtonAceptar();
         }
     }
 }

@@ -52,7 +52,7 @@ namespace TPS_PAV
 
         private void objetivosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ABMCObjetivosForm abmcObjetivos = new ABMCObjetivosForm();
+            ABMCObjetivosForm abmcObjetivos = new ABMCObjetivosForm(mainUser);
             abmcObjetivos.ShowDialog();
 
         }
