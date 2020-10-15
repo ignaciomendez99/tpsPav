@@ -75,6 +75,7 @@
             this.btnNuevoObjetivo.TabIndex = 4;
             this.btnNuevoObjetivo.Text = "Nuevo";
             this.btnNuevoObjetivo.UseVisualStyleBackColor = true;
+            this.btnNuevoObjetivo.Click += new System.EventHandler(this.btnNuevoObjetivo_Click);
             // 
             // NuevoObjetivoForm
             // 

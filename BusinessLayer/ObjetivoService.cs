@@ -22,6 +22,17 @@ namespace TPS_PAV.BusinessLayer
             return objetivoDao.GetAll();
         }
 
+        public void NuevoObjetivo()
+        {
+            var strSql = "insert into Objetivos(id_objetivo, nombre_largo, nombre_corto, borrado) values (@id,@nombreLargo,@nombreCorto,0);";
+
+            Dictionary<string, object> sqlValues = new Dictionary<string, object>
+            {
+                {"@id",  }
+            }
+
+        }
+
 
 
     }
