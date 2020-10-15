@@ -120,7 +120,9 @@ namespace TPS_PAV.GUI
 
         private void btModificarCurso_Click(object sender, EventArgs e)
         {
-            ModificarCursoForm modif = new ModificarCursoForm(ObtenerCursoSeleccionado());
+
+            ModificarCursoForm modif = new ModificarCursoForm(ObtenerCursosSeleccionados());
+            
             modif.ShowDialog();
             iniciarDataGridView();
         }
@@ -165,16 +167,20 @@ namespace TPS_PAV.GUI
         private void dgvCursos_SelectionChanged(object sender, EventArgs e)
         {
 
-            Curso cur = ObtenerCursoSeleccionado();
+            List<Curso> listCur = ObtenerCursosSeleccionados();
 
-            if (cur == null) return;
+            if (listCur.Count == 0) return;
 
-            bool cursoEliminado = servicioCursos.CheckCursoEliminado(cur);
+          foreach(Curso cur in listCur)
+            {
+                bool cursoEliminado = servicioCursos.CheckCursoEliminado(cur);
 
-            btModificarCurso.Enabled = !cursoEliminado;
-            bnBorrarCurso.Enabled = !cursoEliminado;
+                btModificarCurso.Enabled = !cursoEliminado;
+                bnBorrarCurso.Enabled = !cursoEliminado;
+            }
 
-
+            if (listCur.Count > 1) btModificarCurso.Enabled = false;
+            
         }
 
         private void txBuscar_TextChanged(object sender, EventArgs e)
