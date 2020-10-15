@@ -56,6 +56,9 @@ namespace TPS_PAV.DataAccessLayer
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = strSql;
 
+                cmd.Transaction = dbTransaction;
+
+
                 if (prs != null)
                 {
                     foreach (var item in prs)
@@ -97,6 +100,9 @@ namespace TPS_PAV.DataAccessLayer
                 }
 
                 // Retorna el resultado de ejecutar el comando
+
+                cmd.Transaction = dbTransaction;
+
                 rtdo = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
