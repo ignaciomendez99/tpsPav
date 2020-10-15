@@ -56,6 +56,9 @@ namespace TPS_PAV.DataAccessLayer
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = strSql;
 
+                cmd.Transaction = dbTransaction;
+
+
                 if (prs != null)
                 {
                     foreach (var item in prs)

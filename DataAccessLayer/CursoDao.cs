@@ -171,29 +171,47 @@ namespace TPS_PAV.DataAccessLayer
             {
                 dm.BeginTransaction();
 
-                foreach (Objetivo objt in objListToAdd)
+                foreach (Objetivo objt in objListToRemove)
                 {
 
-                    var sqlQuery = "DELETE FROM ObjetivosCurso WHERE id_objetivo = @idobjetivo AND id_curso = @idcurso";
+                    var sqlQueryRem = "DELETE FROM ObjetivosCursos WHERE id_objetivo = @idobjetivo AND id_curso = @idcurso";
 
-                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
-                    queryValues.Add("@idobjetivo", objt.IdObjetivo);
-                    queryValues.Add("@idcurso", curso.IdCurso);
+                    Dictionary<string, object> queryValuesRemove = new Dictionary<string, object>();
+                    queryValuesRemove.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValuesRemove.Add("@idcurso", curso.IdCurso);
 
-                    dm.EjecutarSQL(sqlQuery, queryValues);
+                    dm.EjecutarSQL(sqlQueryRem, queryValuesRemove);
+                }
+
+                List<int> listObjId = new List<int>();
+
+                var sqlQuerySearch = "SELECT id_objetivo FROM ObjetivosCursos WHERE id_curso = @idcurso";
+                Dictionary<string, object> queryValues = new Dictionary<string, object>();
+                queryValues.Add("@idcurso", curso.IdCurso);
+
+
+                var resultadoConsulta = dm.ConsultaSQL(sqlQuerySearch, queryValues);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listObjId.Add(Convert.ToInt32(row["id_objetivo"].ToString()));
                 }
 
 
                 foreach (Objetivo objt in objListToAdd)
                 {
 
-                    var sqlQuery = "INSERT INTO ObjetivosCurso (id_objetivo, id_curso, puntos, borrado) VALUES (@idobjetivo, @idcurso, 0, 0)";
+                    if (listObjId.Contains(objt.IdObjetivo))
+                        continue;
+                    
+                    var sqlQueryAdd = "INSERT INTO ObjetivosCursos (id_objetivo, id_curso, puntos, borrado) VALUES (@idobjetivo, @idcurso, 0, 0)";
 
-                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
-                    queryValues.Add("@idobjetivo", objt.IdObjetivo);
-                    queryValues.Add("@idcurso", curso.IdCurso);
+                    Dictionary<string, object> queryValuesAdd = new Dictionary<string, object>();
+                    queryValuesAdd.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValuesAdd.Add("@idcurso", curso.IdCurso);
 
-                    dm.EjecutarSQL(sqlQuery, queryValues);
+                    dm.EjecutarSQL(sqlQueryAdd, queryValuesAdd);
+                
                 }
 
 
