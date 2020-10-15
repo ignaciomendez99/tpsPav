@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.txBuscar = new System.Windows.Forms.TextBox();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.idCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bnBorrarCurso = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btModificarCurso = new System.Windows.Forms.Button();
@@ -39,14 +45,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelCantidad = new System.Windows.Forms.Label();
-            this.idCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaVigenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cursoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txBuscar
@@ -55,12 +57,13 @@
             this.txBuscar.Name = "txBuscar";
             this.txBuscar.Size = new System.Drawing.Size(246, 22);
             this.txBuscar.TabIndex = 1;
-            this.txBuscar.TextChanged += new System.EventHandler(this.bnBuscarCurso_Click);
+            this.txBuscar.TextChanged += new System.EventHandler(this.txBuscar_TextChanged);
             // 
             // dgvCursos
             // 
             this.dgvCursos.AllowUserToAddRows = false;
             this.dgvCursos.AllowUserToDeleteRows = false;
+            this.dgvCursos.AllowUserToResizeColumns = false;
             this.dgvCursos.AllowUserToResizeRows = false;
             this.dgvCursos.AutoGenerateColumns = false;
             this.dgvCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -72,7 +75,7 @@
             this.descripcionDataGridViewTextBoxColumn,
             this.fechaVigenciaDataGridViewTextBoxColumn,
             this.categoriaDataGridViewTextBoxColumn});
-            this.dgvCursos.DataSource = this.cursoBindingSource;
+            this.dgvCursos.DataSource = this.cursoBindingSource1;
             this.dgvCursos.GridColor = System.Drawing.Color.DarkGray;
             this.dgvCursos.Location = new System.Drawing.Point(13, 41);
             this.dgvCursos.Name = "dgvCursos";
@@ -84,8 +87,52 @@
             this.dgvCursos.Size = new System.Drawing.Size(662, 376);
             this.dgvCursos.TabIndex = 3;
             this.dgvCursos.DataSourceChanged += new System.EventHandler(this.dgvCursos_DataSourceChanged);
-            this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
             this.dgvCursos.SelectionChanged += new System.EventHandler(this.dgvCursos_SelectionChanged);
+            // 
+            // idCursoDataGridViewTextBoxColumn
+            // 
+            this.idCursoDataGridViewTextBoxColumn.DataPropertyName = "IdCurso";
+            this.idCursoDataGridViewTextBoxColumn.HeaderText = "IdCurso";
+            this.idCursoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idCursoDataGridViewTextBoxColumn.Name = "idCursoDataGridViewTextBoxColumn";
+            this.idCursoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCursoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nombreCursoDataGridViewTextBoxColumn
+            // 
+            this.nombreCursoDataGridViewTextBoxColumn.DataPropertyName = "NombreCurso";
+            this.nombreCursoDataGridViewTextBoxColumn.HeaderText = "Nombre Curso";
+            this.nombreCursoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreCursoDataGridViewTextBoxColumn.Name = "nombreCursoDataGridViewTextBoxColumn";
+            this.nombreCursoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaVigenciaDataGridViewTextBoxColumn
+            // 
+            this.fechaVigenciaDataGridViewTextBoxColumn.DataPropertyName = "FechaVigencia";
+            this.fechaVigenciaDataGridViewTextBoxColumn.HeaderText = "Fecha de Vigencia";
+            this.fechaVigenciaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaVigenciaDataGridViewTextBoxColumn.Name = "fechaVigenciaDataGridViewTextBoxColumn";
+            this.fechaVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoriaDataGridViewTextBoxColumn
+            // 
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // bnBorrarCurso
             // 
@@ -165,50 +212,9 @@
             this.labelCantidad.TabIndex = 11;
             this.labelCantidad.Text = "0";
             // 
-            // idCursoDataGridViewTextBoxColumn
+            // cursoBindingSource1
             // 
-            this.idCursoDataGridViewTextBoxColumn.DataPropertyName = "IdCurso";
-            this.idCursoDataGridViewTextBoxColumn.HeaderText = "IdCurso";
-            this.idCursoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idCursoDataGridViewTextBoxColumn.Name = "idCursoDataGridViewTextBoxColumn";
-            this.idCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCursoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreCursoDataGridViewTextBoxColumn
-            // 
-            this.nombreCursoDataGridViewTextBoxColumn.DataPropertyName = "NombreCurso";
-            this.nombreCursoDataGridViewTextBoxColumn.HeaderText = "Nombre Curso";
-            this.nombreCursoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreCursoDataGridViewTextBoxColumn.Name = "nombreCursoDataGridViewTextBoxColumn";
-            this.nombreCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaVigenciaDataGridViewTextBoxColumn
-            // 
-            this.fechaVigenciaDataGridViewTextBoxColumn.DataPropertyName = "FechaVigencia";
-            this.fechaVigenciaDataGridViewTextBoxColumn.HeaderText = "Fecha de Vigencia";
-            this.fechaVigenciaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaVigenciaDataGridViewTextBoxColumn.Name = "fechaVigenciaDataGridViewTextBoxColumn";
-            this.fechaVigenciaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
+            this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // ABMCursosForm
             // 
@@ -230,6 +236,7 @@
             this.Load += new System.EventHandler(this.BMCCursosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelCantidad;
+        private System.Windows.Forms.BindingSource cursoBindingSource1;
     }
 }

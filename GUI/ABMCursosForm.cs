@@ -48,18 +48,6 @@ namespace TPS_PAV.GUI
             dgvCursos.DataSource = servicioCursos.ObtenerCursos();
         }
 
-
-        private void bnBuscarCurso_Click(object sender, EventArgs e)
-        {
-            dgvCursos.DataSource = servicioCursos.ObtenerCursoBuscado(txBuscar.Text);
-        }
-
-        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            bnBorrarCurso.Enabled = true;
-            btModificarCurso.Enabled = true;
-        }
-
         private void bnBorrarCurso_Click(object sender, EventArgs e)
         {
 
@@ -82,9 +70,6 @@ namespace TPS_PAV.GUI
         {
             DataGridViewSelectedRowCollection elementosAborrar = dgvCursos.SelectedRows;
             DataGridViewRow row;
-
-            
-            
 
             IEnumerator Enumerator = elementosAborrar.GetEnumerator();
 
@@ -122,14 +107,27 @@ namespace TPS_PAV.GUI
         private void checkMostrarEliminados_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMostrarEliminados.Checked)
-            
+            {
                 dgvCursos.DataSource = servicioCursos.ObtenerCursosYEliminados();
-
-
+                CambiarColorEliminados();
+            }
             else
                 dgvCursos.DataSource = servicioCursos.ObtenerCursos();
 
+            txBuscar.Text = "";
         }
+
+        private void CambiarColorEliminados()
+        {
+
+            foreach(DataGridViewRow row in dgvCursos.Rows)
+            {
+                if (servicioCursos.CheckCursoEliminado((Curso)row.DataBoundItem)) row.DefaultCellStyle.BackColor = Color.LightGray;
+
+            }
+
+        }
+
 
         private void dgvCursos_DataSourceChanged(object sender, EventArgs e)
         {
@@ -139,18 +137,28 @@ namespace TPS_PAV.GUI
         private void dgvCursos_SelectionChanged(object sender, EventArgs e)
         {
 
-
             Curso cur = ObtenerCursoSeleccionado();
 
             if (cur == null) return;
 
             bool cursoEliminado = servicioCursos.CheckCursoEliminado(cur);
 
-
             btModificarCurso.Enabled = !cursoEliminado;
             bnBorrarCurso.Enabled = !cursoEliminado;
 
 
+        }
+
+        private void txBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(checkMostrarEliminados.Checked)
+            {
+                dgvCursos.DataSource = servicioCursos.ObtenerCursoBuscadoEliminados(txBuscar.Text);
+                CambiarColorEliminados();
+
+            }
+                
+            else dgvCursos.DataSource = servicioCursos.ObtenerCursoBuscado(txBuscar.Text);
         }
     }
 }

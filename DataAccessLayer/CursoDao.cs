@@ -35,6 +35,29 @@ namespace TPS_PAV.DataAccessLayer
             return listCurso;
         }
 
+        public IList<Curso> GetCursoBySearchEliminados(string searchParam)
+        {
+
+            List<Curso> listCurso = new List<Curso>();
+
+            var strSql = "SELECT * from Cursos WHERE (nombre LIKE @search " +
+                         "OR descripcion LIKE @search OR id_curso LIKE @search); ";
+                         
+
+            Dictionary<string, object> dictSql = new Dictionary<string, object>();
+
+            dictSql.Add("@search", "%" + searchParam + "%");
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql, dictSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listCurso.Add(MappingCurso(row));
+            }
+
+            return listCurso;
+        }
+
 
         public bool CheckCursoEliminado(Curso curso)
         {

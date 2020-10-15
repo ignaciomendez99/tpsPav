@@ -38,12 +38,14 @@
             this.txtCantidad = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.objetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.idObjetivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCortoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreLargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objetivoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.objetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Objetivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,9 +61,11 @@
             // txtBoxBuscar
             // 
             this.txtBoxBuscar.Location = new System.Drawing.Point(75, 9);
+            this.txtBoxBuscar.MaxLength = 100;
             this.txtBoxBuscar.Name = "txtBoxBuscar";
             this.txtBoxBuscar.Size = new System.Drawing.Size(256, 22);
             this.txtBoxBuscar.TabIndex = 1;
+            this.txtBoxBuscar.TextChanged += new System.EventHandler(this.txtBoxBuscar_TextChanged);
             // 
             // checkEliminados
             // 
@@ -71,6 +75,7 @@
             this.checkEliminados.Size = new System.Drawing.Size(18, 17);
             this.checkEliminados.TabIndex = 2;
             this.checkEliminados.UseVisualStyleBackColor = true;
+            this.checkEliminados.CheckedChanged += new System.EventHandler(this.checkEliminados_CheckedChanged);
             // 
             // label2
             // 
@@ -83,23 +88,30 @@
             // 
             // dgv_Objetivos
             // 
+            this.dgv_Objetivos.AllowUserToAddRows = false;
+            this.dgv_Objetivos.AllowUserToDeleteRows = false;
+            this.dgv_Objetivos.AllowUserToResizeColumns = false;
+            this.dgv_Objetivos.AllowUserToResizeRows = false;
             this.dgv_Objetivos.AutoGenerateColumns = false;
             this.dgv_Objetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Objetivos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Objetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Objetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idObjetivoDataGridViewTextBoxColumn,
-            this.nombreCortoDataGridViewTextBoxColumn,
-            this.nombreLargoDataGridViewTextBoxColumn});
-            this.dgv_Objetivos.DataSource = this.objetivoBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2});
+            this.dgv_Objetivos.DataSource = this.objetivoBindingSource1;
             this.dgv_Objetivos.GridColor = System.Drawing.Color.DarkGray;
             this.dgv_Objetivos.Location = new System.Drawing.Point(15, 44);
             this.dgv_Objetivos.Name = "dgv_Objetivos";
+            this.dgv_Objetivos.ReadOnly = true;
             this.dgv_Objetivos.RowHeadersVisible = false;
             this.dgv_Objetivos.RowHeadersWidth = 51;
             this.dgv_Objetivos.RowTemplate.Height = 24;
+            this.dgv_Objetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Objetivos.Size = new System.Drawing.Size(631, 441);
             this.dgv_Objetivos.TabIndex = 4;
+            this.dgv_Objetivos.SelectionChanged += new System.EventHandler(this.dgv_Objetivos_SelectionChanged);
             // 
             // label3
             // 
@@ -136,10 +148,7 @@
             this.btnBorrar.TabIndex = 8;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
-            // 
-            // objetivoBindingSource
-            // 
-            this.objetivoBindingSource.DataSource = typeof(TPS_PAV.Entities.Objetivo);
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnAgregar
             // 
@@ -150,28 +159,40 @@
             this.btnAgregar.TabIndex = 9;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // idObjetivoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idObjetivoDataGridViewTextBoxColumn.DataPropertyName = "IdObjetivo";
-            this.idObjetivoDataGridViewTextBoxColumn.HeaderText = "IdObjetivo";
-            this.idObjetivoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idObjetivoDataGridViewTextBoxColumn.Name = "idObjetivoDataGridViewTextBoxColumn";
-            this.idObjetivoDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdObjetivo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdObjetivo";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
-            // nombreCortoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.nombreCortoDataGridViewTextBoxColumn.DataPropertyName = "NombreCorto";
-            this.nombreCortoDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreCortoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreCortoDataGridViewTextBoxColumn.Name = "nombreCortoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombreCorto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
-            // nombreLargoDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.nombreLargoDataGridViewTextBoxColumn.DataPropertyName = "NombreLargo";
-            this.nombreLargoDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.nombreLargoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreLargoDataGridViewTextBoxColumn.Name = "nombreLargoDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NombreLargo";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // objetivoBindingSource1
+            // 
+            this.objetivoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Objetivo);
+            // 
+            // objetivoBindingSource
+            // 
+            this.objetivoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // ABMCObjetivosForm
             // 
@@ -191,6 +212,7 @@
             this.Name = "ABMCObjetivosForm";
             this.Text = "ABMCObjetivosForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Objetivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,5 +235,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idObjetivoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCortoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreLargoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource objetivoBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
