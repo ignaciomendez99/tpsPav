@@ -91,6 +91,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ModificarObjetivoForm";
             this.Text = "ModificarObjetivoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarObjetivoForm_FormClosing);
             this.Load += new System.EventHandler(this.ModificarObjetivoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

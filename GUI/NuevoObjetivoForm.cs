@@ -17,6 +17,7 @@ namespace TPS_PAV.GUI
     {
 
         private readonly ObjetivoService objetivoService;
+        private bool creado = false;
 
         public NuevoObjetivoForm()
         {
@@ -35,11 +36,29 @@ namespace TPS_PAV.GUI
 
             bool creado = objetivoService.NuevoObjetivo(nombre, descripcion);
             if (creado)
+            {
+                this.creado = true;
                 MessageBox.Show("¡El objetivo ha sido agregado con éxito!", "Aviso", MessageBoxButtons.OK);
+
+            }
+
             else
                 MessageBox.Show("No se ha agregado el objetivo", "Aviso", MessageBoxButtons.OK);
 
             this.Close();
+
+        }
+
+        private void NuevoObjetivoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rpta;
+
+            if (!this.creado)
+            {
+                rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rpta == DialogResult.No)
+                    e.Cancel = true;
+            }
 
         }
     }

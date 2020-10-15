@@ -92,6 +92,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "NuevoObjetivoForm";
             this.Text = "NuevoObjetivoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevoObjetivoForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

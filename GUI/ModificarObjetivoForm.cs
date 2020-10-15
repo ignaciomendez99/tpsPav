@@ -17,6 +17,7 @@ namespace TPS_PAV.GUI
 
         private Objetivo objAmod;
         private ObjetivoService objService;
+        private bool modificado;
         public ModificarObjetivoForm(Objetivo obj)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace TPS_PAV.GUI
             objService.ModificarObjetivo(objAmod);
 
             MessageBox.Show("Objetivo modificado exitosamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.None);
+            modificado = true;
             this.Close();
         }
 
@@ -39,6 +41,19 @@ namespace TPS_PAV.GUI
         {
             txtBoxNombre.Text = objAmod.NombreCorto;
             txtBoxDescripcion.Text = objAmod.NombreLargo;
+        }
+
+        private void ModificarObjetivoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rpta;
+
+            if (!this.modificado)
+            {
+                rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rpta == DialogResult.No)
+                    e.Cancel = true;
+            }
+
         }
     }
 }

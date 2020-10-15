@@ -32,6 +32,7 @@ namespace TPS_PAV.GUI
 
             else checkEliminados.Enabled = false;
 
+
         }
 
         public void InicarDataGridView()
@@ -147,6 +148,8 @@ namespace TPS_PAV.GUI
 
                 InicarDataGridView();
             }
+
+            checkEliminados.Checked = false;
         }
 
         private void CambiarColorEliminados()
@@ -163,14 +166,23 @@ namespace TPS_PAV.GUI
         private void dgv_Objetivos_SelectionChanged(object sender, EventArgs e)
         {
 
-            Objetivo ob = ObtenerObjetivoSeleccionado();
+            //Objetivo ob = ObtenerObjetivoSeleccionado();
 
-            if (ob == null) return;
+            List<Objetivo> listObj = ObtenerObjetivosSeleccionados();
+            if (listObj.Count == 0) return;
+
+            foreach(Objetivo obj in listObj)
+            {
+                bool obEliminado = objetivoService.CheckObjetivoEliminado(obj);
+                btnModificar.Enabled = !obEliminado;
+                btnBorrar.Enabled = !obEliminado;
+
+            }
+
+            if (listObj.Count > 1) btnModificar.Enabled = false;
         
-            bool obEliminado = objetivoService.CheckObjetivoEliminado(ob);
-            btnModificar.Enabled = !obEliminado;
-            btnBorrar.Enabled = !obEliminado;
-        
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
