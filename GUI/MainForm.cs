@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPS_PAV.Entities;
 using TPS_PAV.GUI;
+using TPS_PAV.GUI.Reports;
 
 namespace TPS_PAV
 {
@@ -60,6 +61,12 @@ namespace TPS_PAV
         private void ayudaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Grupo Nro: 3 - PAVI 2020\nSala, Lorenzo - Mendez, Ignacio - Zago, Agustín - Otero, Gastón", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void avancePorCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporte rf = new FormReporte();
+            rf.ShowDialog();
         }
     }
 }
