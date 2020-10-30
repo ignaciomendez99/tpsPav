@@ -21,6 +21,9 @@ namespace TPS_PAV
             InitializeComponent();
             usuarioService = new UsuarioService();
 
+            txUsuario.Text = "administrador";
+            txClave.Text = "12345";
+
         }
 
         private void bnIngresar_Click(object sender, EventArgs e)
@@ -41,8 +44,10 @@ namespace TPS_PAV
             if (usr != null)
             {
                 MainForm main = new MainForm(usr);
-                main.Show();
+              
                 this.Hide();
+                main.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -51,7 +56,17 @@ namespace TPS_PAV
                 MessageBox.Show("Debe ingresar usuario y/o contraseña válidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            
+
         }
 
+        private void txClave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                bnIngresar.PerformClick();
+            }
+        }
     }
 }

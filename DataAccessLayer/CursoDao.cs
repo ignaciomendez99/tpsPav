@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPS_PAV.BusinessLayer;
 using TPS_PAV.Entities;
 
@@ -34,11 +35,67 @@ namespace TPS_PAV.DataAccessLayer
             return listCurso;
         }
 
+        public IList<Curso> GetCursoBySearchEliminados(string searchParam)
+        {
+
+            List<Curso> listCurso = new List<Curso>();
+
+            var strSql = "SELECT * from Cursos WHERE (nombre LIKE @search " +
+                         "OR descripcion LIKE @search OR id_curso LIKE @search); ";
+                         
+
+            Dictionary<string, object> dictSql = new Dictionary<string, object>();
+
+            dictSql.Add("@search", "%" + searchParam + "%");
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql, dictSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listCurso.Add(MappingCurso(row));
+            }
+
+            return listCurso;
+        }
+
+
+        public bool CheckCursoEliminado(Curso curso)
+        {
+
+            var strSql = "Select borrado from cursos where id_curso = @idcurso";
+            Dictionary<string, object> sqlValues = new Dictionary<string, object>()
+            {
+                {"@idcurso", curso.IdCurso}
+            };
+
+            var res = Convert.ToInt32(DataManager.GetInstance().ConsultaSQLScalar(strSql,sqlValues));
+            if (res == 1) return true;
+            else return false;
+            
+        }
+        
+
         public IList<Curso> GetAll()
         {
             List<Curso> listCurso = new List<Curso>();
 
             var strSql = "SELECT * from Cursos WHERE borrado = 0";
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
+
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listCurso.Add(MappingCurso(row));
+            }
+
+            return listCurso;
+        }
+
+        public IList<Curso> GetAllYEliminados()
+        {
+            List<Curso> listCurso = new List<Curso>();
+
+            var strSql = "SELECT * from Cursos";
 
             var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
 
@@ -78,6 +135,40 @@ namespace TPS_PAV.DataAccessLayer
             queryValues.Add("@idcurso", curso.IdCurso);
 
             DataManager.GetInstance().EjecutarSQL(sqlQuery, queryValues);
+        }
+
+        public bool DeleteCursos(List<Curso> cursosList)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            bool success = false;
+            try
+            {
+                dm.BeginTransaction();
+                foreach(Curso curso in cursosList)
+                {
+                    var sqlQuery = "UPDATE Cursos SET borrado = 1 WHERE id_curso = @idCurso";
+                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+                    queryValues.Add("@idCurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuery, queryValues);
+                }
+
+                dm.Commit();
+                success = true;
+
+
+            }
+
+            catch (Exception e)
+            {
+                dm.Rollback();
+
+            }
+
+            return success;
+
         }
 
         public void InsertCurso(Curso curso)
@@ -127,6 +218,85 @@ namespace TPS_PAV.DataAccessLayer
             DataManager.GetInstance().EjecutarSQL(sqlQuery,queryValues);
                        
         }
+        public bool TransactObjetivoCurso(List<Objetivo> objListToAdd, List<Objetivo> objListToRemove , Curso curso)
+        {
+
+            DataManager dm = DataManager.GetInstance();
+
+            Boolean succes = false;
+            try
+            {
+                dm.BeginTransaction();
+
+                foreach (Objetivo objt in objListToRemove)
+                {
+
+                    var sqlQueryRem = "DELETE FROM ObjetivosCursos WHERE id_objetivo = @idobjetivo AND id_curso = @idcurso";
+
+                    Dictionary<string, object> queryValuesRemove = new Dictionary<string, object>();
+                    queryValuesRemove.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValuesRemove.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQueryRem, queryValuesRemove);
+                }
+
+                List<int> listObjId = new List<int>();
+
+                var sqlQuerySearch = "SELECT id_objetivo FROM ObjetivosCursos WHERE id_curso = @idcurso";
+                Dictionary<string, object> queryValues = new Dictionary<string, object>();
+                queryValues.Add("@idcurso", curso.IdCurso);
+
+
+                var resultadoConsulta = dm.ConsultaSQL(sqlQuerySearch, queryValues);
+
+                foreach (DataRow row in resultadoConsulta.Rows)
+                {
+                    listObjId.Add(Convert.ToInt32(row["id_objetivo"].ToString()));
+                }
+
+
+                foreach (Objetivo objt in objListToAdd)
+                {
+
+                    if (listObjId.Contains(objt.IdObjetivo))
+                        continue;
+                    
+                    var sqlQueryAdd = "INSERT INTO ObjetivosCursos (id_objetivo, id_curso, puntos, borrado) VALUES (@idobjetivo, @idcurso, 0, 0)";
+
+                    Dictionary<string, object> queryValuesAdd = new Dictionary<string, object>();
+                    queryValuesAdd.Add("@idobjetivo", objt.IdObjetivo);
+                    queryValuesAdd.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQueryAdd, queryValuesAdd);
+                
+                }
+
+
+                dm.Commit();
+                succes = true;
+            } 
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                dm.Rollback();
+            }
+
+            return succes;
+
+        }
+
+        public Curso getCursoById(int idCurso)
+        {
+
+            var sqlQuery = "SELECT * FROM Cursos WHERE id_curso = @idcurso ";
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+            queryValues.Add("@idcurso", idCurso);
+            var cursoEncontrado = DataManager.GetInstance().ConsultaSQL(sqlQuery, queryValues);
+            if (cursoEncontrado.Rows.Count == 0)
+                return null;
+            return MappingCurso(cursoEncontrado.Rows[0]);
+        }
+
 
     }
 }

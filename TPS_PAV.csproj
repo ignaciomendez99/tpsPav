@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,8 +64,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BugTracker78710DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BugTracker78710DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BusinessLayer\CategoriaService.cs" />
     <Compile Include="BusinessLayer\CursoService.cs" />
+    <Compile Include="BusinessLayer\ObjetivoService.cs" />
+    <Compile Include="DataAccessLayer\ObjetivoDao.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
     <Compile Include="DataAccessLayer\CursoDao.cs" />
@@ -55,19 +80,35 @@
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\Objetivo.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="GUI\ABMCCursosForm.cs">
+    <Compile Include="GUI\ABMCObjetivosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ABMCCursosForm.Designer.cs">
-      <DependentUpon>ABMCCursosForm.cs</DependentUpon>
+    <Compile Include="GUI\ABMCObjetivosForm.Designer.cs">
+      <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\BMCCursosForm.cs">
+    <Compile Include="GUI\Reports\DataSetReportes.cs">
+      <DependentUpon>DataSetReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ModificarObjetivoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\BMCCursosForm.Designer.cs">
-      <DependentUpon>BMCCursosForm.cs</DependentUpon>
+    <Compile Include="GUI\ModificarObjetivoForm.Designer.cs">
+      <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NuevoCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NuevoCursoForm.Designer.cs">
+      <DependentUpon>NuevoCursoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ABMCursosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ABMCursosForm.Designer.cs">
+      <DependentUpon>ABMCursosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -87,13 +128,43 @@
     <Compile Include="GUI\ModificarCursoForm.Designer.cs">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NuevoObjetivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NuevoObjetivoForm.Designer.cs">
+      <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reports\DataSetReportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Reports\FormReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Reports\FormReporte.Designer.cs">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TransaccionObjetivoCursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TransaccionObjetivoCursoForm.Designer.cs">
+      <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\ABMCCursosForm.resx">
-      <DependentUpon>ABMCCursosForm.cs</DependentUpon>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="GUI\ABMCObjetivosForm.resx">
+      <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\BMCCursosForm.resx">
-      <DependentUpon>BMCCursosForm.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\ModificarObjetivoForm.resx">
+      <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NuevoCursoForm.resx">
+      <DependentUpon>NuevoCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ABMCursosForm.resx">
+      <DependentUpon>ABMCursosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -103,6 +174,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ModificarCursoForm.resx">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NuevoObjetivoForm.resx">
+      <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reports\FormReporte.resx">
+      <DependentUpon>FormReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reports\ReportesCursos.rdlc" />
+    <EmbeddedResource Include="GUI\TransaccionObjetivoCursoForm.resx">
+      <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,6 +195,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="BugTracker78710DataSet.xsc">
+      <DependentUpon>BugTracker78710DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BugTracker78710DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BugTracker78710DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BugTracker78710DataSet.xss">
+      <DependentUpon>BugTracker78710DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Reports\DataSetReportes.xsc">
+      <DependentUpon>DataSetReportes.xsd</DependentUpon>
+    </None>
+    <None Include="GUI\Reports\DataSetReportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReportes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GUI\Reports\DataSetReportes.xss">
+      <DependentUpon>DataSetReportes.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\TPS_PAV.Entities.Curso.datasource" />
+    <None Include="Properties\DataSources\TPS_PAV.Entities.Objetivo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -128,5 +234,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\arrowDown.png" />
+    <Content Include="Resources\arrowUp.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

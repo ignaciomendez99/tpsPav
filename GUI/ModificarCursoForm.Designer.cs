@@ -97,16 +97,18 @@
             // txNombre
             // 
             this.txNombre.Location = new System.Drawing.Point(148, 54);
+            this.txNombre.MaxLength = 50;
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(173, 22);
-            this.txNombre.TabIndex = 6;
+            this.txNombre.TabIndex = 0;
             // 
             // txDescripcion
             // 
             this.txDescripcion.Location = new System.Drawing.Point(148, 171);
+            this.txDescripcion.MaxLength = 50;
             this.txDescripcion.Name = "txDescripcion";
             this.txDescripcion.Size = new System.Drawing.Size(173, 22);
-            this.txDescripcion.TabIndex = 9;
+            this.txDescripcion.TabIndex = 3;
             // 
             // btModificarCurso
             // 
@@ -124,7 +126,7 @@
             this.cbCategoriaCursos.Location = new System.Drawing.Point(148, 132);
             this.cbCategoriaCursos.Name = "cbCategoriaCursos";
             this.cbCategoriaCursos.Size = new System.Drawing.Size(173, 24);
-            this.cbCategoriaCursos.TabIndex = 11;
+            this.cbCategoriaCursos.TabIndex = 2;
             // 
             // txFechaVigencia
             // 
@@ -132,7 +134,7 @@
             this.txFechaVigencia.Mask = "00/00/0000";
             this.txFechaVigencia.Name = "txFechaVigencia";
             this.txFechaVigencia.Size = new System.Drawing.Size(173, 22);
-            this.txFechaVigencia.TabIndex = 12;
+            this.txFechaVigencia.TabIndex = 1;
             // 
             // ModificarCursoForm
             // 
@@ -150,6 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txId);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ModificarCursoForm";
             this.Text = "Modificar Curso";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarCursoForm_FormClosing);

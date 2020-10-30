@@ -11,6 +11,7 @@ namespace TPS_PAV.DataAccessLayer
     class DataManager
     {
         private SqlConnection dbConnection;
+        private SqlTransaction dbTransaction;
 
 
         private static DataManager instance;
@@ -55,6 +56,9 @@ namespace TPS_PAV.DataAccessLayer
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = strSql;
 
+                cmd.Transaction = dbTransaction;
+
+
                 if (prs != null)
                 {
                     foreach (var item in prs)
@@ -96,6 +100,9 @@ namespace TPS_PAV.DataAccessLayer
                 }
 
                 // Retorna el resultado de ejecutar el comando
+
+                cmd.Transaction = dbTransaction;
+
                 rtdo = cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -115,7 +122,7 @@ namespace TPS_PAV.DataAccessLayer
         ///          El error de conexión se produce:
         ///              a) durante la apertura de la conexión
         ///              b) durante la ejecución del comando.
-        public object ConsultaSQLScalar(string strSql)
+        public object ConsultaSQLScalar(string strSql, Dictionary<string, object> prs = null)
         {
             SqlCommand cmd = new SqlCommand();
             try
@@ -124,6 +131,15 @@ namespace TPS_PAV.DataAccessLayer
                 cmd.CommandType = CommandType.Text;
                 // Establece la instrucción a ejecutar
                 cmd.CommandText = strSql;
+
+                if (prs != null)
+                {
+                    foreach (var item in prs)
+                    {
+                        cmd.Parameters.AddWithValue(item.Key, item.Value);
+                    }
+                }
+
                 return cmd.ExecuteScalar();
             }
             catch (SqlException ex)
@@ -131,6 +147,31 @@ namespace TPS_PAV.DataAccessLayer
                 throw (ex);
             }
         }
+
+        // Begin transaction
+        public void BeginTransaction()
+        {
+            if (dbConnection.State == ConnectionState.Open)
+                dbTransaction = dbConnection.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Commit();
+        }
+
+        public void Rollback()
+        {
+            if (dbTransaction != null)
+                dbTransaction.Rollback();
+        }
+
+        public void Dispose()
+        {
+            this.Close();
+        }
+
 
     }
 }

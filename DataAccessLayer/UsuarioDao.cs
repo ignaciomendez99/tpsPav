@@ -14,7 +14,7 @@ namespace TPS_PAV.DataAccessLayer
         {
             List<Usuario> listadoUsuarios = new List<Usuario>();
 
-            var strSql = "SELECT id_usuario, usuario, email, estado from Usuarios";
+            var strSql = "SELECT id_usuario, usuario, email, estado from Usuarios WHERE borrado = 0;";
 
             var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
 
