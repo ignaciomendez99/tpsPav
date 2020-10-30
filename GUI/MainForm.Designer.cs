@@ -40,6 +40,7 @@
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.avancePorCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,8 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.avancePorCursoToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -132,6 +135,13 @@
             this.label1.Size = new System.Drawing.Size(336, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usted se ha logueado como:";
+            // 
+            // avancePorCursoToolStripMenuItem
+            // 
+            this.avancePorCursoToolStripMenuItem.Name = "avancePorCursoToolStripMenuItem";
+            this.avancePorCursoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.avancePorCursoToolStripMenuItem.Text = "Avance por Curso";
+            this.avancePorCursoToolStripMenuItem.Click += new System.EventHandler(this.avancePorCursoToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -168,5 +178,6 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem actualizarObjetivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem objetivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem avancePorCursoToolStripMenuItem;
     }
 }
