@@ -62,7 +62,9 @@ namespace TPS_PAV.GUI
                 servicioCursos.DeleteCursos(cursosList);
 
                 iniciarDataGridView();
-            }            
+            }
+
+            checkMostrarEliminados.Checked = false;
 
         }
 
@@ -193,6 +195,41 @@ namespace TPS_PAV.GUI
             }
                 
             else dgvCursos.DataSource = servicioCursos.ObtenerCursoBuscado(txBuscar.Text);
+        }
+
+        private void dgvCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cursoBindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cursoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCantidad_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

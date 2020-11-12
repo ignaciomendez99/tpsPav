@@ -11,6 +11,7 @@ namespace TPS_PAV.Entities
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string Email { get; set; }
+        
         public string Estado { get; set; }
 
         public string Password { get; set; }

@@ -1,20 +1,72 @@
-D:\UTN\PAV\TPLoren\bin\Debug\TPS_PAV.exe.config
-D:\UTN\PAV\TPLoren\bin\Debug\TPS_PAV.exe
-D:\UTN\PAV\TPLoren\bin\Debug\TPS_PAV.pdb
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.csprojAssemblyReference.cache
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.LoginForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.MainForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.ModificarCursoForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.Properties.Resources.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.csproj.GenerateResource.cache
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.csproj.CoreCompileInputs.cache
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.exe
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.pdb
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.ABMCObjetivosForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.NuevoCursoForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.ABMCursosForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.NuevoObjetivoForm.resources
-D:\UTN\PAV\TPLoren\obj\Debug\TPS_PAV.GUI.TransaccionObjetivoCursoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe.config
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.pdb
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\EnvDTE.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\stdole.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\Microsoft.MSXML.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\zh-HANT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csprojAssemblyReference.cache
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ABMCObjetivosForm.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ModificarObjetivoForm.resources
@@ -24,12 +76,14 @@ C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicacion
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.MainForm.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ModificarCursoForm.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.NuevoObjetivoForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.Reports.FormReporte.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.TransaccionObjetivoCursoForm.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.Properties.Resources.resources
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csproj.GenerateResource.cache
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csproj.CoreCompileInputs.cache
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.csproj.CopyComplete
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.exe
 C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.pdb
-C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe.config
-C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.exe
-C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\bin\Debug\TPS_PAV.pdb
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ABMCUsuariosForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.NuevoUsuarioForm.resources
+C:\Users\Ignacio Mendez\Desktop\Facultad\Tercer Año\Programación de Aplicaciones Visuales\Practico\TpsPavIgna\obj\Debug\TPS_PAV.GUI.ModificarUsuarioForm.resources
