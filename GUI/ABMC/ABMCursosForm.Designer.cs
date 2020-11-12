@@ -132,11 +132,11 @@
             // 
             // cursoBindingSource1
             // 
-            this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
+            //this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // cursoBindingSource
             // 
-            this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
+            //this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // bnBorrarCurso
             // 
