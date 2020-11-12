@@ -68,5 +68,12 @@ namespace TPS_PAV
             FormReporte rf = new FormReporte();
             rf.ShowDialog();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ABMCUsuariosForm uf = new ABMCUsuariosForm(mainUser);
+            uf.ShowDialog();
+
+        }
     }
 }
