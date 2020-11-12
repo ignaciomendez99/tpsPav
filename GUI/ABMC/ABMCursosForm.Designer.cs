@@ -87,7 +87,6 @@
             this.dgvCursos.Size = new System.Drawing.Size(662, 376);
             this.dgvCursos.TabIndex = 3;
             this.dgvCursos.DataSourceChanged += new System.EventHandler(this.dgvCursos_DataSourceChanged);
-            this.dgvCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellContentClick);
             this.dgvCursos.SelectionChanged += new System.EventHandler(this.dgvCursos_SelectionChanged);
             // 
             // idCursoDataGridViewTextBoxColumn
@@ -134,12 +133,10 @@
             // cursoBindingSource1
             // 
             //this.cursoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Curso);
-            this.cursoBindingSource1.CurrentChanged += new System.EventHandler(this.cursoBindingSource1_CurrentChanged);
             // 
             // cursoBindingSource
             // 
             //this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
-            this.cursoBindingSource.CurrentChanged += new System.EventHandler(this.cursoBindingSource_CurrentChanged);
             // 
             // bnBorrarCurso
             // 
@@ -160,7 +157,6 @@
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Buscar:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btModificarCurso
             // 
@@ -201,7 +197,6 @@
             this.label2.Size = new System.Drawing.Size(185, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Consultar cursos eliminados";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -211,7 +206,6 @@
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Total: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // labelCantidad
             // 
@@ -221,7 +215,6 @@
             this.labelCantidad.Size = new System.Drawing.Size(16, 17);
             this.labelCantidad.TabIndex = 11;
             this.labelCantidad.Text = "0";
-            this.labelCantidad.Click += new System.EventHandler(this.labelCantidad_Click);
             // 
             // ABMCursosForm
             // 

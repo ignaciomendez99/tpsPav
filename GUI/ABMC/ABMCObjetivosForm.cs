@@ -19,7 +19,7 @@ namespace TPS_PAV.GUI
 
         private readonly ObjetivoService objetivoService;
 
-
+        
         public ABMCObjetivosForm(Usuario user)
         {
             objetivoService = new ObjetivoService();
@@ -31,7 +31,7 @@ namespace TPS_PAV.GUI
                 checkEliminados.Enabled = true;
 
             else checkEliminados.Enabled = false;
-
+            
 
         }
 
@@ -181,8 +181,6 @@ namespace TPS_PAV.GUI
 
             if (listObj.Count > 1) btnModificar.Enabled = false;
         
-
-
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
