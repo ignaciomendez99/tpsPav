@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TPS_PAV.Entities;
 using TPS_PAV.GUI;
 using TPS_PAV.GUI.Reports;
+using TPS_PAV.GUI.Transacciones;
 
 namespace TPS_PAV
 {
@@ -74,6 +75,19 @@ namespace TPS_PAV
             ABMCUsuariosForm uf = new ABMCUsuariosForm(mainUser);
             uf.ShowDialog();
 
+        }
+
+        private void objetivosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ABMCObjetivosForm ob = new ABMCObjetivosForm(mainUser);
+            ob.ShowDialog();
+
+        }
+
+        private void actualizarAvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransaccionActualizarAvance tob = new TransaccionActualizarAvance();
+            tob.ShowDialog();
         }
     }
 }

@@ -106,7 +106,7 @@ namespace TPS_PAV.GUI.Transacciones
 
             IList<Objetivo> objetivos = ObtenerObjetivosSeleccionados();
 
-            oUsuarioService.EjecutarTransaccion(usuario, objetivos);
+            //oUsuarioService.EjecutarTransaccion(usuario, objetivos);
         }
 
         public void EjecutarTransaccion(Usuario usuario, IList<Objetivo> objetivos)
