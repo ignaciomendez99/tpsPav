@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPS_PAV.BusinessLayer;
+using TPS_PAV.DataAccessLayer;
 using TPS_PAV.Entities;
 
 namespace TPS_PAV.GUI.Transacciones
@@ -26,7 +27,7 @@ namespace TPS_PAV.GUI.Transacciones
             oCursoService = new CursoService();
             oObjetivoService = new ObjetivoService();
 
-            LlenarCombo(cbCurso, oCursoService.ObtenerCursos(), "Nombre Curso");
+            LlenarCombo(cbCurso, oCursoService.ObtenerCursos(), "NombreCurso");
 
         }
 
@@ -44,8 +45,8 @@ namespace TPS_PAV.GUI.Transacciones
         {
 
             Curso curso = (Curso) cbCurso.SelectedItem;
-            IList<Objetivo> usuarios = oUsuarioService.ObtenerUsuariosCurso();
-            dgv_Usuarios.DataSource = usuarios;
+            //IList<Objetivo> usuarios = oUsuarioService.ObtenerUsuariosCurso(); Obtener los que estan con un estado S!!
+            //dgv_Usuarios.DataSource = usuarios;
             
             
         }
@@ -98,9 +99,89 @@ namespace TPS_PAV.GUI.Transacciones
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnObjetivoCompletado_Click(object sender, EventArgs e)
         {
 
+            Usuario usuario = ObtenerUsuarioSeleccionado();
+
+            IList<Objetivo> objetivos = ObtenerObjetivosSeleccionados();
+
+            oUsuarioService.EjecutarTransaccion(usuario, objetivos);
+        }
+
+        public void EjecutarTransaccion(Usuario usuario, IList<Objetivo> objetivos)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            // Cuando el porcentaje llega al 100%, se establece la fecha fin y se suma al puntuacion del usuario. 
+            // Para ello, se suman los puntos de cada uno de los objetivos del curso.
+
+            int puntos = ObtenerPuntosObjetivos(objetivos);
+
+
+            try
+            {
+                dm.BeginTransaction();
+
+                var strSql = "UPDATE UsuariosCurso SET puntuacion = @puntacion WHERE id_usuario = @idusuario";
+
+            }
+
+            catch(Exception e)
+            {
+
+                dm.Rollback();
+
+            }
+
+        }
+
+        //Dao
+
+        private int ObtenerPuntosObjetivos(IList<Objetivo> objetivos)
+        {
+            int puntos = 0;
+            var strSql = "SELECT puntos FROM ObjetivosCursos WHERE id_curso = @idoCurso;";
+            
+
+
+            foreach(Objetivo objetivo in objetivos)
+            {
+                Dictionary<string, object> sqlValues = new Dictionary<string, object>();
+                sqlValues.Add("@idobjetivo", objetivo.IdObjetivo);
+                puntos += Convert.ToInt32(DataManager.GetInstance().ConsultaSQLScalar(strSql, sqlValues));
+
+            }
+
+            return puntos;
+
+
+        }
+
+        // Dao
+
+        private IList<Objetivo> ObtenerObjetivosSeleccionados()
+        {
+            DataGridViewSelectedRowCollection seleccionados = dgv_Objetivos.SelectedRows;
+            DataGridViewRow row;
+            List<Objetivo> objetivos = new List<Objetivo>();
+
+            IEnumerator Enumerator = seleccionados.GetEnumerator();
+
+            Enumerator.Reset();
+
+            while (Enumerator.MoveNext())
+
+            {
+
+                row = (DataGridViewRow)Enumerator.Current;
+
+                Objetivo objetivo = (Objetivo)row.DataBoundItem;
+
+                objetivos.Add(objetivo);
+
+            }
+            return objetivos;
         }
     }
 }

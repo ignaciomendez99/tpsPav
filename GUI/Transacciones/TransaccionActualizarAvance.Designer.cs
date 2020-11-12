@@ -41,7 +41,7 @@
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnObjetivoCompletado = new System.Windows.Forms.Button();
             this.dgv_Objetivos = new System.Windows.Forms.DataGridView();
             this.idObjetivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreLargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -167,7 +167,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnObjetivoCompletado);
             this.groupBox2.Controls.Add(this.dgv_Objetivos);
             this.groupBox2.Location = new System.Drawing.Point(12, 419);
             this.groupBox2.Name = "groupBox2";
@@ -176,15 +176,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Estado del Usuario";
             // 
-            // button1
+            // btnObjetivoCompletado
             // 
-            this.button1.Location = new System.Drawing.Point(234, 217);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Marcar objetivo como Completado";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnObjetivoCompletado.Location = new System.Drawing.Point(234, 217);
+            this.btnObjetivoCompletado.Name = "btnObjetivoCompletado";
+            this.btnObjetivoCompletado.Size = new System.Drawing.Size(244, 23);
+            this.btnObjetivoCompletado.TabIndex = 1;
+            this.btnObjetivoCompletado.Text = "Marcar objetivo como Completado";
+            this.btnObjetivoCompletado.UseVisualStyleBackColor = true;
+            this.btnObjetivoCompletado.Click += new System.EventHandler(this.btnObjetivoCompletado_Click);
             // 
             // dgv_Objetivos
             // 
@@ -266,7 +266,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn perfilDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnObjetivoCompletado;
         private System.Windows.Forms.DataGridView dgv_Objetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idObjetivoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreLargoDataGridViewTextBoxColumn;
