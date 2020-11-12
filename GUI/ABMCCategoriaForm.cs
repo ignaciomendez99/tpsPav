@@ -11,19 +11,17 @@ using System.Windows.Forms;
 using TPS_PAV.BusinessLayer;
 using TPS_PAV.Entities;
 
-
 namespace TPS_PAV.GUI
 {
-    public partial class ABMCObjetivosForm : Form
+    public partial class ABMCCategoriaForm : Form
     {
+        private readonly CategoriaService catService;
 
-        private readonly ObjetivoService objetivoService;
-
-        
-        public ABMCObjetivosForm(Usuario user)
+        public ABMCCategoriaForm(Usuario user)
         {
-            objetivoService = new ObjetivoService();
             InitializeComponent();
+            catService = new CategoriaService();
+
             InicarDataGridView();
 
             if (user.NombreUsuario.Equals("administrador"))
@@ -31,22 +29,21 @@ namespace TPS_PAV.GUI
                 checkEliminados.Enabled = true;
 
             else checkEliminados.Enabled = false;
-            
 
         }
 
         public void InicarDataGridView()
         {
 
-            dgv_Objetivos.DataSource = objetivoService.ObtenerTodos();
-            txtCantidad.Text = dgv_Objetivos.Rows.Count.ToString();
+            dgv_Categorias.DataSource = catService.ObtenerTodos();
+            txtCantidad.Text = dgv_Categorias.Rows.Count.ToString();
 
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            NuevoObjetivoForm nof = new NuevoObjetivoForm();
-            nof.ShowDialog();
+            NuevaCategoriaForm nuevaCat = new NuevaCategoriaForm();
+            nuevaCat.ShowDialog();
             InicarDataGridView();
         }
 
@@ -55,10 +52,11 @@ namespace TPS_PAV.GUI
 
             if (checkEliminados.Checked)
             {
-                dgv_Objetivos.DataSource = objetivoService.GetObjetivoBySearchEliminados(txtBoxBuscar.Text);
-                CambiarColorEliminados(); 
+                dgv_Categorias.DataSource = catService.GetCategoriaBySearchEliminados(txtBoxBuscar.Text);
+                CambiarColorEliminados();
             }
-            else dgv_Objetivos.DataSource = objetivoService.GetObjetivoBySearch(txtBoxBuscar.Text);
+            else dgv_Categorias.DataSource = catService.GetCategoriaBySearch(txtBoxBuscar.Text);
+            
         }
 
         private void checkEliminados_CheckedChanged(object sender, EventArgs e)
@@ -66,46 +64,21 @@ namespace TPS_PAV.GUI
 
             if (checkEliminados.Checked)
             {
-                dgv_Objetivos.DataSource = objetivoService.GetAllYEliminados();
-                txtCantidad.Text = dgv_Objetivos.Rows.Count.ToString();
+                dgv_Categorias.DataSource = catService.GetAllYEliminados();
+                txtCantidad.Text = dgv_Categorias.Rows.Count.ToString();
                 CambiarColorEliminados();
             }
             else
             {
-                dgv_Objetivos.DataSource = objetivoService.ObtenerTodos();
-                txtCantidad.Text = dgv_Objetivos.Rows.Count.ToString();
+                dgv_Categorias.DataSource = catService.ObtenerTodos();
+                txtCantidad.Text = dgv_Categorias.Rows.Count.ToString();
             }
 
         }
 
-        private Objetivo ObtenerObjetivoSeleccionado()
+        private Categoria ObtenerCategoriaSeleccionada()
         {
-            DataGridViewSelectedRowCollection elementosAborrar =dgv_Objetivos.SelectedRows;
-            DataGridViewRow row;
-
-
-            IEnumerator Enumerator = elementosAborrar.GetEnumerator();
-
-            Enumerator.Reset();
-
-            while (Enumerator.MoveNext())
-
-            {
-
-                row = (DataGridViewRow)Enumerator.Current;
-
-                Objetivo objetivo = (Objetivo)row.DataBoundItem;
-
-                // Como solo se puede elegir un objetivo, devuelve el primero que encuentra
-                return objetivo;
-            }
-            return null;
-
-        }
-
-        private List<Objetivo> ObtenerObjetivosSeleccionados()
-        {
-            DataGridViewSelectedRowCollection elementosSeleccionados = dgv_Objetivos.SelectedRows;
+            DataGridViewSelectedRowCollection elementosSeleccionados = dgv_Categorias.SelectedRows;
             DataGridViewRow row;
 
 
@@ -113,7 +86,7 @@ namespace TPS_PAV.GUI
 
             Enumerator.Reset();
 
-            List<Objetivo> objetivosList = new List<Objetivo>();
+            List<Categoria> objetivosList = new List<Categoria>();
 
             while (Enumerator.MoveNext())
 
@@ -121,10 +94,39 @@ namespace TPS_PAV.GUI
 
                 row = (DataGridViewRow)Enumerator.Current;
 
-                Objetivo objetivo = (Objetivo)row.DataBoundItem;
+                Categoria objetivo = (Categoria)row.DataBoundItem;
+
+             
+                objetivosList.Add(objetivo);
+                break;
+            }
+
+            return objetivosList[0];
+
+        }
+
+        private List<Categoria> ObtenerCategoriasSeleccionadas()
+        {
+            DataGridViewSelectedRowCollection elementosSeleccionados = dgv_Categorias.SelectedRows;
+            DataGridViewRow row;
+
+
+            IEnumerator Enumerator = elementosSeleccionados.GetEnumerator();
+
+            Enumerator.Reset();
+
+            List<Categoria> objetivosList = new List<Categoria>();
+
+            while (Enumerator.MoveNext())
+
+            {
+
+                row = (DataGridViewRow)Enumerator.Current;
+
+                Categoria objetivo = (Categoria)row.DataBoundItem;
 
                 // Como solo se puede elegir un objetivo, devuelve el primero que encuentra
-                objetivosList.Add( objetivo );
+                objetivosList.Add(objetivo);
             }
 
             return objetivosList;
@@ -140,11 +142,9 @@ namespace TPS_PAV.GUI
             if (rpta == DialogResult.Yes)
             {
 
-                //Objetivo objetivoABorrar = ObtenerObjetivoSeleccionado();
+                List<Categoria> catList = ObtenerCategoriasSeleccionadas();
 
-                List<Objetivo> objList = ObtenerObjetivosSeleccionados();
-
-                objetivoService.DeleteObjetivos(objList);
+                catService.DeleteCatagorias(catList);
 
                 InicarDataGridView();
             }
@@ -155,9 +155,9 @@ namespace TPS_PAV.GUI
         private void CambiarColorEliminados()
         {
 
-            foreach (DataGridViewRow row in dgv_Objetivos.Rows)
+            foreach (DataGridViewRow row in dgv_Categorias.Rows)
             {
-                if (objetivoService.CheckObjetivoEliminado((Objetivo)row.DataBoundItem)) row.DefaultCellStyle.BackColor = Color.LightGray;
+                if (catService.CheckCategoriaEliminado((Categoria)row.DataBoundItem)) row.DefaultCellStyle.BackColor = Color.LightGray;
 
             }
 
@@ -168,24 +168,24 @@ namespace TPS_PAV.GUI
 
             //Objetivo ob = ObtenerObjetivoSeleccionado();
 
-            List<Objetivo> listObj = ObtenerObjetivosSeleccionados();
+            List<Categoria> listObj = ObtenerCategoriasSeleccionadas();
             if (listObj.Count == 0) return;
 
-            foreach(Objetivo obj in listObj)
+            foreach (Categoria obj in listObj)
             {
-                bool obEliminado = objetivoService.CheckObjetivoEliminado(obj);
+                bool obEliminado = catService.CheckCategoriaEliminado(obj);
                 btnModificar.Enabled = !obEliminado;
                 btnBorrar.Enabled = !obEliminado;
 
             }
 
             if (listObj.Count > 1) btnModificar.Enabled = false;
-        
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ModificarObjetivoForm mcf = new ModificarObjetivoForm(ObtenerObjetivoSeleccionado());
+            ModificarCategoriaForms mcf = new ModificarCategoriaForms(ObtenerCategoriaSeleccionada());
             mcf.ShowDialog();
             InicarDataGridView();
         }
