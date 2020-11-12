@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TPS_PAV.Entities;
 using TPS_PAV.GUI;
 using TPS_PAV.GUI.Reports;
+using TPS_PAV.GUI.Transacciones;
 
 namespace TPS_PAV
 {
@@ -67,6 +68,13 @@ namespace TPS_PAV
         {
             FormReporte rf = new FormReporte();
             rf.ShowDialog();
+        }
+
+        private void actualizarAvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransaccionActualizarAvance tav = new TransaccionActualizarAvance();
+            tav.ShowDialog();
+
         }
     }
 }
