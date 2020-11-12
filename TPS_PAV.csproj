@@ -85,49 +85,49 @@
     <Compile Include="Entities\Objetivo.cs" />
     <Compile Include="Entities\Perfil.cs" />
     <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="GUI\ABMCObjetivosForm.cs">
+    <Compile Include="GUI\ABMC\ABMCObjetivosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ABMCObjetivosForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ABMCObjetivosForm.Designer.cs">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ABMCUsuariosForm.cs">
+    <Compile Include="GUI\ABMC\ABMCUsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ABMCUsuariosForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ABMCUsuariosForm.Designer.cs">
       <DependentUpon>ABMCUsuariosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ModificarUsuarioForm.cs">
+    <Compile Include="GUI\ABMC\ModificarUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ModificarUsuarioForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ModificarUsuarioForm.Designer.cs">
       <DependentUpon>ModificarUsuarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NuevoUsuarioForm.cs">
+    <Compile Include="GUI\ABMC\NuevoUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NuevoUsuarioForm.Designer.cs">
+    <Compile Include="GUI\ABMC\NuevoUsuarioForm.Designer.cs">
       <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Reports\DataSetReportes.cs">
       <DependentUpon>DataSetReportes.xsd</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ModificarObjetivoForm.cs">
+    <Compile Include="GUI\ABMC\ModificarObjetivoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ModificarObjetivoForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ModificarObjetivoForm.Designer.cs">
       <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NuevoCursoForm.cs">
+    <Compile Include="GUI\ABMC\NuevoCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NuevoCursoForm.Designer.cs">
+    <Compile Include="GUI\ABMC\NuevoCursoForm.Designer.cs">
       <DependentUpon>NuevoCursoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ABMCursosForm.cs">
+    <Compile Include="GUI\ABMC\ABMCursosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ABMCursosForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ABMCursosForm.Designer.cs">
       <DependentUpon>ABMCursosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoginForm.cs">
@@ -142,16 +142,16 @@
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\ModificarCursoForm.cs">
+    <Compile Include="GUI\ABMC\ModificarCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ModificarCursoForm.Designer.cs">
+    <Compile Include="GUI\ABMC\ModificarCursoForm.Designer.cs">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\NuevoObjetivoForm.cs">
+    <Compile Include="GUI\ABMC\NuevoObjetivoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\NuevoObjetivoForm.Designer.cs">
+    <Compile Include="GUI\ABMC\NuevoObjetivoForm.Designer.cs">
       <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Reports\DataSetReportes.Designer.cs">
@@ -165,31 +165,31 @@
     <Compile Include="GUI\Reports\FormReporte.Designer.cs">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\TransaccionObjetivoCursoForm.cs">
+    <Compile Include="GUI\Transacciones\TransaccionObjetivoCursoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\TransaccionObjetivoCursoForm.Designer.cs">
+    <Compile Include="GUI\Transacciones\TransaccionObjetivoCursoForm.Designer.cs">
       <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="GUI\ABMCObjetivosForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ABMCObjetivosForm.resx">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ABMCUsuariosForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ABMCUsuariosForm.resx">
       <DependentUpon>ABMCUsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ModificarObjetivoForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ModificarObjetivoForm.resx">
       <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ModificarUsuarioForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ModificarUsuarioForm.resx">
       <DependentUpon>ModificarUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NuevoCursoForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\NuevoCursoForm.resx">
       <DependentUpon>NuevoCursoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ABMCursosForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ABMCursosForm.resx">
       <DependentUpon>ABMCursosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
@@ -198,20 +198,20 @@
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\ModificarCursoForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\ModificarCursoForm.resx">
       <DependentUpon>ModificarCursoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NuevoObjetivoForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\NuevoObjetivoForm.resx">
       <DependentUpon>NuevoObjetivoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\NuevoUsuarioForm.resx">
+    <EmbeddedResource Include="GUI\ABMC\NuevoUsuarioForm.resx">
       <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reports\FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reports\ReportesCursos.rdlc" />
-    <EmbeddedResource Include="GUI\TransaccionObjetivoCursoForm.resx">
+    <EmbeddedResource Include="GUI\Transacciones\TransaccionObjetivoCursoForm.resx">
       <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -140,7 +140,7 @@
             // 
             // objetivoBindingSource1
             // 
-            this.objetivoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Objetivo);
+            //this.objetivoBindingSource1.DataSource = typeof(TPS_PAV.Entities.Objetivo);
             // 
             // label3
             // 
@@ -193,7 +193,7 @@
             // 
             // objetivoBindingSource
             // 
-            this.objetivoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
+            //this.objetivoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
             // 
             // ABMCObjetivosForm
             // 
