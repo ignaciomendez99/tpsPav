@@ -183,6 +183,12 @@
     <Compile Include="GUI\Reports\FormReporte.Designer.cs">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Reports\FormReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Reports\FormReporte2.Designer.cs">
+      <DependentUpon>FormReporte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Transacciones\TransaccionFinalizarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,7 +249,11 @@
     <EmbeddedResource Include="GUI\Reports\FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reports\FormReporte2.resx">
+      <DependentUpon>FormReporte2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reports\ReportesCursos.rdlc" />
+    <EmbeddedResource Include="GUI\Reports\ReportesUsuario.rdlc" />
     <EmbeddedResource Include="GUI\Transacciones\TransaccionFinalizarCurso.resx">
       <DependentUpon>TransaccionFinalizarCurso.cs</DependentUpon>
     </EmbeddedResource>

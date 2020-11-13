@@ -89,5 +89,11 @@ namespace TPS_PAV
             TransaccionFinalizarCurso tob = new TransaccionFinalizarCurso();
             tob.ShowDialog();
         }
+
+        private void perfilesPorUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporte2 rp = new FormReporte2();
+            rp.ShowDialog();
+        }
     }
 }

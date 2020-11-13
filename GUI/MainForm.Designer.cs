@@ -44,6 +44,7 @@
             this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.perfilesPorUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +133,8 @@
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.avancePorCursoToolStripMenuItem});
+            this.avancePorCursoToolStripMenuItem,
+            this.perfilesPorUsuarioToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -140,7 +142,7 @@
             // avancePorCursoToolStripMenuItem
             // 
             this.avancePorCursoToolStripMenuItem.Name = "avancePorCursoToolStripMenuItem";
-            this.avancePorCursoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
+            this.avancePorCursoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.avancePorCursoToolStripMenuItem.Text = "Avance por Curso";
             this.avancePorCursoToolStripMenuItem.Click += new System.EventHandler(this.avancePorCursoToolStripMenuItem_Click);
             // 
@@ -169,6 +171,13 @@
             this.label1.Size = new System.Drawing.Size(336, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Usted se ha logueado como:";
+            // 
+            // perfilesPorUsuarioToolStripMenuItem
+            // 
+            this.perfilesPorUsuarioToolStripMenuItem.Name = "perfilesPorUsuarioToolStripMenuItem";
+            this.perfilesPorUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.perfilesPorUsuarioToolStripMenuItem.Text = "Perfiles por Usuario";
+            this.perfilesPorUsuarioToolStripMenuItem.Click += new System.EventHandler(this.perfilesPorUsuarioToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem objetivosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem actualizarAvanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem perfilesPorUsuarioToolStripMenuItem;
     }
 }
