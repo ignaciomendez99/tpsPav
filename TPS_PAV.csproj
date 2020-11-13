@@ -183,11 +183,11 @@
     <Compile Include="GUI\Reports\FormReporte.Designer.cs">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Transacciones\TransaccionActualizarAvance.cs">
+    <Compile Include="GUI\Transacciones\TransaccionFinalizarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Transacciones\TransaccionActualizarAvance.Designer.cs">
-      <DependentUpon>TransaccionActualizarAvance.cs</DependentUpon>
+    <Compile Include="GUI\Transacciones\TransaccionFinalizarCurso.Designer.cs">
+      <DependentUpon>TransaccionFinalizarCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Transacciones\TransaccionObjetivoCursoForm.cs">
       <SubType>Form</SubType>
@@ -244,8 +244,8 @@
       <DependentUpon>FormReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reports\ReportesCursos.rdlc" />
-    <EmbeddedResource Include="GUI\Transacciones\TransaccionActualizarAvance.resx">
-      <DependentUpon>TransaccionActualizarAvance.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Transacciones\TransaccionFinalizarCurso.resx">
+      <DependentUpon>TransaccionFinalizarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Transacciones\TransaccionObjetivoCursoForm.resx">
       <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>

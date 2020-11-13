@@ -1,6 +1,6 @@
 ﻿namespace TPS_PAV.GUI.Transacciones
 {
-    partial class TransaccionActualizarAvance
+    partial class TransaccionFinalizarCurso
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbCurso = new System.Windows.Forms.ComboBox();
             this.dgv_Usuarios = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sueldosTableAdapter1 = new TPS_PAV.BugTracker78710DataSetTableAdapters.SueldosTableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
             this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,19 +43,10 @@
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnObjetivoCompletado = new System.Windows.Forms.Button();
-            this.dgv_Objetivos = new System.Windows.Forms.DataGridView();
-            this.idObjetivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreLargoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCortoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.objetivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Objetivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,8 +91,45 @@
             this.dgv_Usuarios.RowHeadersWidth = 51;
             this.dgv_Usuarios.RowTemplate.Height = 24;
             this.dgv_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Usuarios.Size = new System.Drawing.Size(658, 319);
+            this.dgv_Usuarios.Size = new System.Drawing.Size(658, 379);
             this.dgv_Usuarios.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dgv_Usuarios);
+            this.groupBox1.Controls.Add(this.cbCurso);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(689, 485);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Usuario por Curso";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(550, 449);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(127, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Finalizar Curso";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // sueldosTableAdapter1
+            // 
+            this.sueldosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(376, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(307, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Este curso ha finalizado, no se puede modificar";
             // 
             // idUsuarioDataGridViewTextBoxColumn
             // 
@@ -153,81 +185,6 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(TPS_PAV.Entities.Usuario);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dgv_Usuarios);
-            this.groupBox1.Controls.Add(this.cbCurso);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(689, 400);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Usuario por Curso";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnObjetivoCompletado);
-            this.groupBox2.Controls.Add(this.dgv_Objetivos);
-            this.groupBox2.Location = new System.Drawing.Point(12, 419);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(689, 247);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Estado del Usuario";
-            // 
-            // btnObjetivoCompletado
-            // 
-            this.btnObjetivoCompletado.Location = new System.Drawing.Point(234, 217);
-            this.btnObjetivoCompletado.Name = "btnObjetivoCompletado";
-            this.btnObjetivoCompletado.Size = new System.Drawing.Size(244, 23);
-            this.btnObjetivoCompletado.TabIndex = 1;
-            this.btnObjetivoCompletado.Text = "Marcar objetivo como Completado";
-            this.btnObjetivoCompletado.UseVisualStyleBackColor = true;
-            this.btnObjetivoCompletado.Click += new System.EventHandler(this.btnObjetivoCompletado_Click);
-            // 
-            // dgv_Objetivos
-            // 
-            this.dgv_Objetivos.AutoGenerateColumns = false;
-            this.dgv_Objetivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Objetivos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_Objetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Objetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idObjetivoDataGridViewTextBoxColumn,
-            this.nombreLargoDataGridViewTextBoxColumn,
-            this.nombreCortoDataGridViewTextBoxColumn});
-            this.dgv_Objetivos.DataSource = this.objetivoBindingSource;
-            this.dgv_Objetivos.Location = new System.Drawing.Point(149, 21);
-            this.dgv_Objetivos.Name = "dgv_Objetivos";
-            this.dgv_Objetivos.RowHeadersVisible = false;
-            this.dgv_Objetivos.RowHeadersWidth = 51;
-            this.dgv_Objetivos.RowTemplate.Height = 24;
-            this.dgv_Objetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Objetivos.Size = new System.Drawing.Size(415, 190);
-            this.dgv_Objetivos.TabIndex = 0;
-            // 
-            // idObjetivoDataGridViewTextBoxColumn
-            // 
-            this.idObjetivoDataGridViewTextBoxColumn.DataPropertyName = "IdObjetivo";
-            this.idObjetivoDataGridViewTextBoxColumn.HeaderText = "IdObjetivo";
-            this.idObjetivoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idObjetivoDataGridViewTextBoxColumn.Name = "idObjetivoDataGridViewTextBoxColumn";
-            this.idObjetivoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nombreLargoDataGridViewTextBoxColumn
-            // 
-            this.nombreLargoDataGridViewTextBoxColumn.DataPropertyName = "NombreLargo";
-            this.nombreLargoDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreLargoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreLargoDataGridViewTextBoxColumn.Name = "nombreLargoDataGridViewTextBoxColumn";
-            // 
-            // nombreCortoDataGridViewTextBoxColumn
-            // 
-            this.nombreCortoDataGridViewTextBoxColumn.DataPropertyName = "NombreCorto";
-            this.nombreCortoDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.nombreCortoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreCortoDataGridViewTextBoxColumn.Name = "nombreCortoDataGridViewTextBoxColumn";
-            // 
             // objetivoBindingSource
             // 
             this.objetivoBindingSource.DataSource = typeof(TPS_PAV.Entities.Objetivo);
@@ -236,17 +193,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 676);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(710, 507);
             this.Controls.Add(this.groupBox1);
             this.Name = "TransaccionActualizarAvance";
             this.Text = "TransaccionActualizarAvance";
+            this.Load += new System.EventHandler(this.TransaccionActualizarAvance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Usuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Objetivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objetivoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -265,12 +220,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfilDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnObjetivoCompletado;
-        private System.Windows.Forms.DataGridView dgv_Objetivos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idObjetivoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreLargoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCortoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource objetivoBindingSource;
+        private System.Windows.Forms.Button button1;
+        private BugTracker78710DataSetTableAdapters.SueldosTableAdapter sueldosTableAdapter1;
+        private System.Windows.Forms.Label label2;
     }
 }
