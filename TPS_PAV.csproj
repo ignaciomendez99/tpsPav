@@ -72,11 +72,13 @@
     <Compile Include="BusinessLayer\CategoriaService.cs" />
     <Compile Include="BusinessLayer\CursoService.cs" />
     <Compile Include="BusinessLayer\ObjetivoService.cs" />
+    <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="DataAccessLayer\ObjetivoDao.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
     <Compile Include="DataAccessLayer\CursoDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\PerfilDAO.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
@@ -95,17 +97,35 @@
     <Compile Include="GUI\ABMC\ABMCObjetivosForm.Designer.cs">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ABMC\ABMCUsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ABMC\ABMCUsuariosForm.Designer.cs">
+      <DependentUpon>ABMCUsuariosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ABMC\ModificarCategoriaForms.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ABMC\ModificarCategoriaForms.Designer.cs">
       <DependentUpon>ModificarCategoriaForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ABMC\ModificarUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ABMC\ModificarUsuarioForm.Designer.cs">
+      <DependentUpon>ModificarUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ABMC\NuevaCategoriaForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ABMC\NuevaCategoriaForm.Designer.cs">
       <DependentUpon>NuevaCategoriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ABMC\NuevoUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ABMC\NuevoUsuarioForm.Designer.cs">
+      <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Reports\DataSetReportes.cs">
       <DependentUpon>DataSetReportes.xsd</DependentUpon>
@@ -163,11 +183,17 @@
     <Compile Include="GUI\Reports\FormReporte.Designer.cs">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Transacciones\TransaccionActualizarAvance.cs">
+    <Compile Include="GUI\Reports\FormReporte2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Transacciones\TransaccionActualizarAvance.Designer.cs">
-      <DependentUpon>TransaccionActualizarAvance.cs</DependentUpon>
+    <Compile Include="GUI\Reports\FormReporte2.Designer.cs">
+      <DependentUpon>FormReporte2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Transacciones\TransaccionFinalizarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Transacciones\TransaccionFinalizarCurso.Designer.cs">
+      <DependentUpon>TransaccionFinalizarCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Transacciones\TransaccionObjetivoCursoForm.cs">
       <SubType>Form</SubType>
@@ -184,11 +210,17 @@
     <EmbeddedResource Include="GUI\ABMC\ABMCObjetivosForm.resx">
       <DependentUpon>ABMCObjetivosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ABMC\ABMCUsuariosForm.resx">
+      <DependentUpon>ABMCUsuariosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ABMC\ModificarCategoriaForms.resx">
       <DependentUpon>ModificarCategoriaForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ABMC\ModificarObjetivoForm.resx">
       <DependentUpon>ModificarObjetivoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ABMC\ModificarUsuarioForm.resx">
+      <DependentUpon>ModificarUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ABMC\NuevaCategoriaForm.resx">
       <DependentUpon>NuevaCategoriaForm.cs</DependentUpon>
@@ -198,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ABMC\ABMCursosForm.resx">
       <DependentUpon>ABMCursosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ABMC\NuevoUsuarioForm.resx">
+      <DependentUpon>NuevoUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -214,9 +249,13 @@
     <EmbeddedResource Include="GUI\Reports\FormReporte.resx">
       <DependentUpon>FormReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Reports\FormReporte2.resx">
+      <DependentUpon>FormReporte2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Reports\ReportesCursos.rdlc" />
-    <EmbeddedResource Include="GUI\Transacciones\TransaccionActualizarAvance.resx">
-      <DependentUpon>TransaccionActualizarAvance.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Reports\ReportesUsuario.rdlc" />
+    <EmbeddedResource Include="GUI\Transacciones\TransaccionFinalizarCurso.resx">
+      <DependentUpon>TransaccionFinalizarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Transacciones\TransaccionObjetivoCursoForm.resx">
       <DependentUpon>TransaccionObjetivoCursoForm.cs</DependentUpon>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TPS_PAV.Entities;
 using TPS_PAV.GUI;
 using TPS_PAV.GUI.Reports;
+using TPS_PAV.GUI.Transacciones;
 
 namespace TPS_PAV
 {
@@ -35,6 +36,9 @@ namespace TPS_PAV
         private void MainForm_Load(object sender, EventArgs e)
         {
             lbUsuario.Text = mainUser.NombreUsuario;
+            
+            if (mainUser.Perfil.IdPerfil != 1)
+                usuariosToolStripMenuItem.Enabled = false;
         }
 
         private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +78,25 @@ namespace TPS_PAV
             ABMCUsuariosForm uf = new ABMCUsuariosForm(mainUser);
             uf.ShowDialog();
 
+        }
+
+        private void objetivosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ABMCObjetivosForm ob = new ABMCObjetivosForm(mainUser);
+            ob.ShowDialog();
+
+        }
+
+        private void actualizarAvanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransaccionFinalizarCurso tob = new TransaccionFinalizarCurso();
+            tob.ShowDialog();
+        }
+
+        private void perfilesPorUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormReporte2 rp = new FormReporte2();
+            rp.ShowDialog();
         }
     }
 }

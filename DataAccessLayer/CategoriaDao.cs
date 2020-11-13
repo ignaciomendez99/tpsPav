@@ -88,6 +88,7 @@ namespace TPS_PAV.DataAccessLayer
             return oCategoria;
         }
 
+
         public bool CheckCategoriaEliminado(Categoria cat)
         {
             var strSql = "Select borrado from Categorias where id_categoria = @idCategoria";

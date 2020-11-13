@@ -83,5 +83,16 @@ namespace TPS_PAV.GUI
         {
             this.Close();
         }
+
+        private void ModificarUsuarioForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rpta;
+
+            rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rpta == DialogResult.No)
+                e.Cancel = true;
+            
+
+        }
     }
 }

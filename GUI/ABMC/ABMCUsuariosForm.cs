@@ -70,7 +70,7 @@ namespace TPS_PAV.GUI
             }
 
             checkMostrarEliminados.Checked = false;
-
+            iniciarDataGridView();
         }
 
 
@@ -107,14 +107,14 @@ namespace TPS_PAV.GUI
         {
             ModificarUsuarioForm muf = new ModificarUsuarioForm(ObtenerUsuariosSeleccionados()[0]);
             muf.ShowDialog();
-
+            iniciarDataGridView();
         }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             NuevoUsuarioForm nuf = new NuevoUsuarioForm();
             nuf.ShowDialog();
-
+            iniciarDataGridView();
         }
 
         private void checkMostrarEliminados_CheckedChanged(object sender, EventArgs e)

@@ -28,7 +28,7 @@ namespace TPS_PAV.GUI
 
             
 
-            if (user.NombreUsuario.Equals("administrador"))
+            if (user.Perfil.IdPerfil == 1)
 
                 checkMostrarEliminados.Enabled = true;
 

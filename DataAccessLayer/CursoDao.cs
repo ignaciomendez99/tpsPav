@@ -12,6 +12,26 @@ namespace TPS_PAV.DataAccessLayer
 {
     public class CursoDao
     {
+
+        public int GetPuntosPorCurso(Curso curso)
+        {
+
+            var sqlQuery = "select sum(puntos) from ObjetivosCursos where id_curso = @idcurso";
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+            queryValues.Add("@idcurso", curso.IdCurso);
+
+            var puntos = DataManager.GetInstance().ConsultaSQLScalar(sqlQuery, queryValues);
+            if (puntos is System.DBNull)
+            // La consulta SQL Scalar devuelve DBNull en caso de Null.
+            {
+                return 0;
+            }
+            return (int)puntos;
+
+
+        }
+
         public IList<Curso> GetCursoBySearch(string searchParam)
         {
 
@@ -73,7 +93,69 @@ namespace TPS_PAV.DataAccessLayer
             else return false;
             
         }
-        
+
+        public bool FinalizarCurso(Curso curso, IList<Usuario> usuarios)
+        {
+            DataManager dm = DataManager.GetInstance();
+            Boolean succes = false;
+            try
+            {
+
+                int puntos = GetPuntosPorCurso(curso);
+
+                dm.BeginTransaction();
+
+
+                foreach (Usuario usr in usuarios)
+                {
+
+                    var sqlQuery = @"UPDATE usuarioscursoavance  
+                                        SET fin = @enddate, porc_avance = @percentage 
+                                        WHERE id_usuario=@idusuario AND id_curso=@idcurso";
+
+                    Dictionary<string, object> queryValues = new Dictionary<string, object>();
+                    queryValues.Add("@enddate", DateTime.Now);
+                    queryValues.Add("@percentage", 100);
+                    queryValues.Add("@idusuario", usr.IdUsuario);
+                    queryValues.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuery, queryValues);
+
+                    var sqlQuerySecond = @"UPDATE usuarioscurso 
+                                        SET puntuacion = @puntuacion, fecha_fin = @fechafin 
+                                        WHERE id_usuario=@idusuario AND id_curso=@idcurso";
+
+                    Dictionary<string, object> queryValuesSecond = new Dictionary<string, object>();
+                    queryValuesSecond.Add("@fechafin", DateTime.Now);
+                    queryValuesSecond.Add("@puntuacion", puntos);
+                    queryValuesSecond.Add("@idusuario", usr.IdUsuario);
+                    queryValuesSecond.Add("@idcurso", curso.IdCurso);
+
+                    dm.EjecutarSQL(sqlQuerySecond, queryValuesSecond);
+
+
+                }
+                var sqlQueryThird = @"UPDATE cursos 
+                                        SET fecha_vigencia = null
+                                        WHERE id_curso=@idcurso";
+
+                Dictionary<string, object> queryValuesThird = new Dictionary<string, object>();
+                //queryValuesThird.Add("@fechavigencia", "");
+                queryValuesThird.Add("@idcurso", curso.IdCurso);
+
+                dm.EjecutarSQL(sqlQueryThird, queryValuesThird);
+
+                dm.Commit();
+                succes = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                dm.Rollback();
+            }
+
+            return succes;
+        }
 
         public IList<Curso> GetAll()
         {
@@ -116,10 +198,19 @@ namespace TPS_PAV.DataAccessLayer
                 IdCurso = Convert.ToInt32(row["id_curso"].ToString()),
                 Categoria = catService.ObtenerCategoriaById(Convert.ToInt32(row["id_categoria"])),
                 Descripcion = row["descripcion"].ToString(),
-                FechaVigencia = DateTime.Parse(row["fecha_vigencia"].ToString()),
                 NombreCurso = row["nombre"].ToString()
 
             };
+
+            if (row["fecha_vigencia"].ToString() != "")
+            {
+                DateTime fv;
+
+                fv = DateTime.Parse(row["fecha_vigencia"].ToString());
+                oCurso.FechaVigencia = fv;
+
+            }
+
 
             return oCurso;
             
