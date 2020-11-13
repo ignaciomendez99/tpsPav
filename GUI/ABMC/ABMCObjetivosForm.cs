@@ -26,7 +26,7 @@ namespace TPS_PAV.GUI
             InitializeComponent();
             InicarDataGridView();
 
-            if (user.NombreUsuario.Equals("administrador"))
+            if (user.Perfil.IdPerfil == 1)
 
                 checkEliminados.Enabled = true;
 

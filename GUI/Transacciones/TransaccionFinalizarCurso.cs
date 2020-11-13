@@ -52,7 +52,7 @@ namespace TPS_PAV.GUI.Transacciones
             IList<Usuario> usuarios = ObtenerUsuariosCurso();
             dgv_Usuarios.DataSource = usuarios;
 
-            if (curso.FechaVigencia.ToString() != new DateTime().ToString())
+            if (curso.FechaVigencia.ToString() == "1/1/0001 00:00:00")
             {
                 button1.Enabled = false;
                 label2.Visible = true;
@@ -131,11 +131,11 @@ namespace TPS_PAV.GUI.Transacciones
             IList<Objetivo> objetivos = ObtenerObjetivosDelCurso((Curso)cbCurso.SelectedItem);
             int puntos = ObtenerPuntosObjetivos(objetivos);
 
-            bool succes = oCursoService.FinalizarCurso((Curso)cbCurso.SelectedItem, usuarios, puntos);
+            bool succes = oCursoService.FinalizarCurso((Curso)cbCurso.SelectedItem, usuarios);
             if (succes)
-                MessageBox.Show("si");
+                MessageBox.Show("El curso ha sido terminado por completo");
             else
-                MessageBox.Show("Mal el usuario");
+                MessageBox.Show("Ha habido un error finalizando el curso!");
 
             cbCurso.SelectedIndex = 0;
 

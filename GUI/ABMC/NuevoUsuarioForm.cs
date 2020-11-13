@@ -76,5 +76,16 @@ namespace TPS_PAV.GUI
             //SelectedIndex: establece el índice que especifica el elemento seleccionado actualmente.
             cbo.SelectedIndex = -1;
         }
+
+        private void NuevoUsuarioForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult rpta;
+
+            rpta = MessageBox.Show("Seguro que desea salir? \nSe perderán todos los cambios.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rpta == DialogResult.No)
+                e.Cancel = true;
+
+
+        }
     }
 }

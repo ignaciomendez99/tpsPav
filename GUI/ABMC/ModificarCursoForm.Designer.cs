@@ -122,6 +122,7 @@
             // 
             // cbCategoriaCursos
             // 
+            this.cbCategoriaCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategoriaCursos.FormattingEnabled = true;
             this.cbCategoriaCursos.Location = new System.Drawing.Point(148, 132);
             this.cbCategoriaCursos.Name = "cbCategoriaCursos";

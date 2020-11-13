@@ -78,9 +78,9 @@ namespace TPS_PAV.BusinessLayer
             return oCursoDao.DeleteCursos(cursosList); 
         }
 
-        public bool FinalizarCurso(Curso selectedItem, IList<Usuario> usuarios, int puntos)
+        public bool FinalizarCurso(Curso selectedItem, IList<Usuario> usuarios)
         {
-            return oCursoDao.FinalizarCurso(selectedItem, usuarios, puntos);
+            return oCursoDao.FinalizarCurso(selectedItem, usuarios);
         }
     }
 }

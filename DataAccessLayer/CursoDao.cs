@@ -12,6 +12,26 @@ namespace TPS_PAV.DataAccessLayer
 {
     public class CursoDao
     {
+
+        public int GetPuntosPorCurso(Curso curso)
+        {
+
+            var sqlQuery = "select sum(puntos) from ObjetivosCursos where id_curso = @idcurso";
+            Dictionary<string, object> queryValues = new Dictionary<string, object>();
+
+            queryValues.Add("@idcurso", curso.IdCurso);
+
+            var puntos = DataManager.GetInstance().ConsultaSQLScalar(sqlQuery, queryValues);
+            if (puntos is System.DBNull)
+            // La consulta SQL Scalar devuelve DBNull en caso de Null.
+            {
+                return 0;
+            }
+            return (int)puntos;
+
+
+        }
+
         public IList<Curso> GetCursoBySearch(string searchParam)
         {
 
@@ -74,13 +94,17 @@ namespace TPS_PAV.DataAccessLayer
             
         }
 
-        public bool FinalizarCurso(Curso curso, IList<Usuario> usuarios, int puntos)
+        public bool FinalizarCurso(Curso curso, IList<Usuario> usuarios)
         {
             DataManager dm = DataManager.GetInstance();
             Boolean succes = false;
             try
             {
+
+                int puntos = GetPuntosPorCurso(curso);
+
                 dm.BeginTransaction();
+
 
                 foreach (Usuario usr in usuarios)
                 {
@@ -112,11 +136,11 @@ namespace TPS_PAV.DataAccessLayer
 
                 }
                 var sqlQueryThird = @"UPDATE cursos 
-                                        SET fecha_vigencia = @fechavigencia
+                                        SET fecha_vigencia = null
                                         WHERE id_curso=@idcurso";
 
                 Dictionary<string, object> queryValuesThird = new Dictionary<string, object>();
-                queryValuesThird.Add("@fechavigencia", DateTime.Now);
+                //queryValuesThird.Add("@fechavigencia", "");
                 queryValuesThird.Add("@idcurso", curso.IdCurso);
 
                 dm.EjecutarSQL(sqlQueryThird, queryValuesThird);

@@ -36,6 +36,9 @@ namespace TPS_PAV
         private void MainForm_Load(object sender, EventArgs e)
         {
             lbUsuario.Text = mainUser.NombreUsuario;
+            
+            if (mainUser.Perfil.IdPerfil != 1)
+                usuariosToolStripMenuItem.Enabled = false;
         }
 
         private void nuevoCursoToolStripMenuItem_Click(object sender, EventArgs e)

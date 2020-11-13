@@ -38,20 +38,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.bnBorrarCurso = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txBuscar = new System.Windows.Forms.TextBox();
             this.cursoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreUsuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perfilDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCantidad
@@ -85,7 +84,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(469, 13);
+            this.label2.Location = new System.Drawing.Point(463, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(197, 17);
             this.label2.TabIndex = 18;
@@ -143,7 +142,6 @@
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idUsuarioDataGridViewTextBoxColumn,
             this.nombreUsuarioDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn,
@@ -163,6 +161,10 @@
             this.dgvUsuarios.DataSourceChanged += new System.EventHandler(this.dgvUsuarios_DataSourceChanged);
             this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(TPS_PAV.Entities.Usuario);
+            // 
             // txBuscar
             // 
             this.txBuscar.Location = new System.Drawing.Point(78, 10);
@@ -178,18 +180,6 @@
             // cursoBindingSource
             // 
             this.cursoBindingSource.DataSource = typeof(TPS_PAV.Entities.Curso);
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(TPS_PAV.Entities.Usuario);
-            // 
-            // idUsuarioDataGridViewTextBoxColumn
-            // 
-            this.idUsuarioDataGridViewTextBoxColumn.DataPropertyName = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.HeaderText = "IdUsuario";
-            this.idUsuarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idUsuarioDataGridViewTextBoxColumn.Name = "idUsuarioDataGridViewTextBoxColumn";
-            this.idUsuarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreUsuarioDataGridViewTextBoxColumn
             // 
@@ -250,9 +240,9 @@
             this.Text = "ABMCUsuariosForm";
             this.Load += new System.EventHandler(this.ABMCUsuariosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,12 +262,11 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.BindingSource cursoBindingSource1;
         private System.Windows.Forms.TextBox txBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreUsuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfilDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }
