@@ -86,7 +86,7 @@ namespace TPS_PAV
 
         private void actualizarAvanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TransaccionActualizarAvance tob = new TransaccionActualizarAvance();
+            TransaccionFinalizarCurso tob = new TransaccionFinalizarCurso();
             tob.ShowDialog();
         }
     }

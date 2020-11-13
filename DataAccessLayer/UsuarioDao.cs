@@ -34,9 +34,15 @@ namespace TPS_PAV.DataAccessLayer
 
             var strSql = @"SELECT u.*, p.nombre as nombre_perfil FROM usuarios u 
                             JOIN perfiles p ON p.id_perfil = u.id_perfil
-                            JOIN UsuariosCurso uc ON u.id_usuario = uc.id_usuario WHERE uc.id_curso = 1 ;";
+                            JOIN UsuariosCurso uc ON u.id_usuario = uc.id_usuario WHERE uc.id_curso = @idcurso ;";
 
-            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql);
+            Dictionary<string, object> sqlValues = new Dictionary<string, object>()
+            {
+                {"@idcurso", curso.IdCurso}
+            };
+
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql, sqlValues);
 
             foreach (DataRow row in resultadoConsulta.Rows)
             {
@@ -61,6 +67,31 @@ namespace TPS_PAV.DataAccessLayer
             }
 
             return null;
+        }
+
+        public IList<Usuario> GetUsuarioByCurso(Curso curso)
+        {
+            var strSql = @"Select u.*, p.nombre AS nombre_perfil, p.id_perfil from usuarios u 
+                            JOIN perfiles p ON u.id_perfil=p.id_perfil
+                            JOIN usuarioscurso uc ON uc.id_usuario=u.id_usuario
+                            where uc.id_curso = @idcurso AND u.borrado=0";
+
+
+            Dictionary<string, object> sqlValues = new Dictionary<string, object>()
+            {
+                {"@idcurso", curso.IdCurso}
+            };
+
+            var resultadoConsulta = DataManager.GetInstance().ConsultaSQL(strSql, sqlValues);
+
+            List<Usuario> listUsuario = new List<Usuario>();
+            foreach (DataRow row in resultadoConsulta.Rows)
+            {
+                listUsuario.Add(MappingBug(row));
+            }
+
+            return listUsuario;
+
         }
 
         public bool CheckUsuarioEliminado(Usuario usuario)

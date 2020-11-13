@@ -69,6 +69,11 @@ namespace TPS_PAV.BusinessLayer
             return oUsuarioDao.GetUsuarioBySearch(busqueda);
         }
 
+        public IList<Usuario> ObtenerUsuariosCurso(Curso curso)
+        {
+            return oUsuarioDao.GetUsuarioByCurso(curso);
+        }
+
         public void modificarUsuario(Usuario usuarioAModificar)
         {
             oUsuarioDao.modificarUsuario(usuarioAModificar);
